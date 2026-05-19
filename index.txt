@@ -1,0 +1,16 @@
+Id:    1,       2,    3,   4,   5       6
+Name : Suraj, Aman, Raj, Rani, Rohit    Harsh
+class: 07,      08,  09,  10,    11      12
+marks: 20,      30,  40,  50,    60      --
+Gender: Male.    Male, Male, Female, Male, Male
+
+
+step 1 --> create a table with <table> </table> tag (Done)
+step 2 --> create first row in the table with <tr> </tr> (Done)
+step 3 --> create table head in the 1st row using <th> </th> (Done)
+step 4 --> create another row using <tr> tag (Done)
+step 5 --> add data using <td> </td> tags (fill the data in the same sequence you have created table head)
+
+step 6 --> repeat step 4 and 5
+
+optional step --> add border in tbale using ' border="" ' attribute

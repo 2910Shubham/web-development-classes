@@ -1,0 +1,15 @@
+.image-text {
+    font-size: 120px;
+    font-weight: bold;
+    text-align: center;
+
+    background-image: url("https://cdna.artstation.com/p/marketplace/presentation_assets/003/430/266/large/file.jpg?1706950306");
+    background-size: cover;
+    background-position: center;
+
+    color: transparent;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="form.css">
+  </head>
+
+  <body>
+
+    <div class="page-wrapper">
+
+      <!-- ===== HEADER ===== -->
+      <div class="header">
+        <h1>Student Registration Form</h1>
+        <p>Fill in all the details carefully. All fields marked with * are required.</p>
+      </div>
+
+      <!-- ===== FORM ===== -->
+      <form class="form-card">
+
+        <!-- SECTION 1: PERSONAL INFO -->
+        <div class="section">
+          <h2 class="section-title">1. Personal Information</h2>
+
+          <div class="field">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+            <span class="hint">Input type = text</span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com">
+            <span class="hint">Input type = email</span>
+          </div>
+
+          <div class="field">
+            <label for="password">Create Password *</label>
+            <input type="password" id="password" name="password" placeholder="Min 8 characters">
+            <span class="hint">Input type = password</span>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+            <span class="hint">Input type = tel</span>
+          </div>
+
+          <div class="field">
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob">
+            <span class="hint">Input type = date</span>
+          </div>
+
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" min="5" max="100">
+            <span class="hint">Input type = number</span>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- SECTION 2: ABOUT YOU -->
+        <div class="section">
+          <h2 class="section-title">2. About You</h2>
+
+          <div class="field">
+            <label>Gender *</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="gender" value="male"> Male
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="female"> Female
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="other"> Other
+              </label>
+            </div>
+            <span class="hint">Input type = radio</span>
+          </div>
+
+          <div class="field">
+            <label for="standard">Current Class / Standard *</label>
+            <select id="standard" name="standard">
+              <option value="">-- Select your class --</option>
+              <option value="8">Class 8</option>
+              <option value="9">Class 9</option>
+              <option value="10">Class 10</option>
+              <option value="11">Class 11</option>
+              <option value="12">Class 12</option>
+              <option value="college">College</option>
+            </select>
+            <span class="hint">select tag (dropdown)</span>
+          </div>
+
+          <div class="field">
+            <label>Subjects of Interest</label>
+            <div class="checkbox-group">
+              <label class="check-label">
+                <input type="checkbox" name="subjects" value="html"> HTML
+              </label>
+              <label class="check-label">
+                <input type="checkbox" name="subjects" value="css"> CSS
+              </label>
+              <label class="check-label">
+                <input type="checkbox" name="subjects" value="js"> JavaScript
+              </label>
+              <label class="check-label">
+                <input type="checkbox" name="subjects" value="python"> Python
+              </label>
+              <label class="check-label">
+                <input type="checkbox" name="subjects" value="math"> Mathematics
+              </label>
+              <label class="check-label">
+                <input type="checkbox" name="subjects" value="science"> Science
+              </label>
+            </div>
+            <span class="hint">Input type = checkbox</span>
+          </div>
+
+          <div class="field">
+            <label for="about">Tell us about yourself</label>
+            <textarea id="about" name="about" rows="4" placeholder="Write a short intro about yourself..."></textarea>
+            <span class="hint">textarea tag (multiline text)</span>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- SECTION 3: OTHER INPUTS -->
+        <div class="section">
+          <h2 class="section-title">3. Other Details</h2>
+
+          <div class="field">
+            <label for="website">Your Portfolio / Website</label>
+            <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
+            <span class="hint">Input type = url</span>
+          </div>
+
+          <div class="field">
+            <label for="profile-pic">Upload Profile Picture</label>
+            <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
+            <span class="hint">Input type = file</span>
+          </div>
+
+          <div class="field">
+            <label for="fav-color">Favourite Color</label>
+            <input type="color" id="fav-color" name="fav-color" value="#2c3e7a">
+            <span class="hint">Input type = color</span>
+          </div>
+
+          <div class="field">
+            <label for="study-hours">Daily Study Hours: <span id="hours-val">3</span> hrs</label>
+            <input type="range" id="study-hours" name="study-hours" min="1" max="12" value="3"
+              oninput="document.getElementById('hours-val').textContent = this.value">
+            <span class="hint">Input type = range</span>
+          </div>
+
+          <div class="field">
+            <label for="search">Search a Topic</label>
+            <input type="search" id="search" name="search" placeholder="e.g. CSS Box Model">
+            <span class="hint">Input type = search</span>
+          </div>
+
+          <div class="field">
+            <label for="birth-month">Birth Month</label>
+            <input type="month" id="birth-month" name="birth-month">
+            <span class="hint">Input type = month</span>
+          </div>
+
+          <div class="field">
+            <label for="class-time">Preferred Class Time</label>
+            <input type="time" id="class-time" name="class-time">
+            <span class="hint">Input type = time</span>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- SECTION 4: TERMS + SUBMIT -->
+        <div class="section">
+          <h2 class="section-title">4. Final Step</h2>
+
+          <div class="field">
+            <label class="check-label big-check">
+              <input type="checkbox" name="terms" required>
+              I agree to the Terms and Conditions *
+            </label>
+          </div>
+
+          <div class="field">
+            <label class="check-label big-check">
+              <input type="checkbox" name="newsletter">
+              Subscribe to newsletter for updates
+            </label>
+          </div>
+
+          <!-- HIDDEN INPUT (for students to see) -->
+          <input type="hidden" name="form-source" value="web-dev-class">
+
+          <p class="hint-block">
+            &#128273; There is also a <b>hidden input</b> on this form (type = hidden). It is not visible to the user but sends data to the server. Check the page source to find it!
+          </p>
+
+          <div class="btn-row">
+            <input type="reset" value="Clear Form" class="btn-reset">
+            <input type="submit" value="Submit Registration" class="btn-submit">
+          </div>
+
+        </div>
+
+      </form>
+
+      <!-- ===== FOOTER ===== -->
+      <div class="footer">
+        <p>Web Development Class &mdash; HTML &amp; CSS Project</p>
+        <p>Input types used: text, email, password, tel, date, number, radio, checkbox, select, textarea, url, file, color, range, search, month, time, hidden, reset, submit</p>
+        <P>&copy</P>
+      </div>
+
+    </div>
+
+  </body>
+</html>

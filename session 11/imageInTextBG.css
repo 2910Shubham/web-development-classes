@@ -1,0 +1,45 @@
+.image-text {
+    font-size: 120px;
+    font-weight: bold;
+    text-align: center;
+
+    background-image: url("https://cdn.wallpapersafari.com/12/74/F9UnOK6.webp");
+    background-size: cover;
+    background-position: center;
+
+    color: transparent;
+
+    -webkit-background-clip: text;
+}
+.image-p {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: justify ;
+
+    background-image: url("https://cdn.wallpapersafari.com/12/74/F9UnOK6.webp");
+    background-size: cover;
+    background-position: center;
+
+    color: transparent;
+
+    -webkit-background-clip: text;
+}
+
+.box {
+  background-color: antiquewhite;
+  width: 100%;
+  max-width: 150px;
+  padding: 30px;
+  border-radius: 8px;
+  margin-left: 20%;
+  margin-right: 50%;
+  /* box-shadow: horizontal vertical blur color; */
+
+  box-shadow: 10px 10px 100px rgba(0,0,0,0.5);
+}
+
+.profile {
+   height: 100px;
+   width: 100px;
+   border-radius: 50%
+}

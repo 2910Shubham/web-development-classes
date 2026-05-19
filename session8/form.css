@@ -1,0 +1,322 @@
+/* page-wrapper */
+/* form-card */
+/* section */
+/* section-title */
+/* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
+
+/* Color Pallate
+
+-lavender : (page background)
+-white : (card background )
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(118, 118, 238);
+  color: #1a333c;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 780px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  background-color: brown;
+  padding: 36px 48px;
+  border-radius: 16px 16px 0 0;
+  border-top: 5px solid rgb(214, 31, 62);
+}
+
+.header h1 {
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.header p {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.form-card {
+  background-color: #ffffff;
+  padding: 0;
+  border-left: 2px solid rgb(53, 50, 50);
+  border-right: 2px solid rgb(53, 50, 50);
+}
+
+.section {
+  padding: 36px 48px;
+}
+
+.section-title {
+  color: rgb(214, 31, 62);
+  font-size: 20px;
+  padding: 10px;
+  border-bottom: 2px solid rgb(214, 31, 62);
+}
+
+.divider {
+  height: 8px;
+  background-color: #f4f6fb;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.field label {
+  color: #375637;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="tel"],
+.field input[type="number"],
+.field input[type="url"],
+.field input[type="search"],
+.field input[type="time"],
+.field input[type="month"],
+.field input[type="date"] {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #f4f6fb;
+  color: #0a0909;
+  border-width: 2px;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 180px;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.field input[type="text"]:focus,
+.field input[type="email"]:focus,
+.field input[type="password"]:focus,
+.field input[type="tel"]:focus,
+.field input[type="date"]:focus,
+.field input[type="number"]:focus,
+.field input[type="url"]:focus,
+.field input[type="search"]:focus,
+.field input[type="month"]:focus,
+.field input[type="date"]:focus {
+  border-color: #375637;
+  background-color: rgb(170, 170, 252);
+  outline: none;
+}
+.field select {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #f4f6fb;
+  color: #1a333c;
+  border-width: 2px solid rgb(53, 50, 50);
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.field select:focus {
+  border-color: blue;
+  outline: none;
+}
+
+.radio-group {
+  padding: 12px 16px;
+  background-color: #f4f6fb;
+  border-width: 2px;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 8px;
+}
+
+.radio-label {
+  color: #1a333c;
+  font-size: 15px;
+  font-weight: normal;
+  margin-right: 28px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.radio-label input {
+  margin-right: 6px;
+  accent-color: rgb(170, 170, 252);
+}
+
+.field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #f4f6fb;
+  border-width: 2px;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.field textarea:focus {
+  border-color: blue;
+  background-color: rgb(170, 170, 252);
+  outline: none;
+}
+
+/* In next session we will be working on the checkboxes */
+
+.checkbox-group {
+  padding: 14px 16px;
+  background-color: #f4f6fb;
+  border-width: 2px;
+  border-color: #1a333c;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.check-label {
+  display: inline-block;
+  color: #1a333c;
+  font-size: 15px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.check-label input {
+    accent-color: rgb(170, 170, 252);
+}
+
+.big-check {
+   display: block;
+   font-size: 15px;
+   padding: 10px 0px;
+}
+
+.field input[type = "file"] {
+   width: 100%;
+   padding: 10px 14px;
+   background-color: #f4f6fb;
+   border-width: 2px;
+   border-style: dashed;
+   border-color: #1a333c;
+   border-radius: 8px;
+   color: #375637;
+   font-size: 15px;
+
+}
+
+.field input[type= "color"]{
+    width: 60px;
+    height: 44px;
+    padding: 4px;
+    background-color: #f4f6fb;
+    border-width: 2px;
+    border-style: dotted;
+    border-color: #1a333c;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.field input[type="range"] {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    accent-color:  rgb(170, 170, 252)
+}
+
+.hint {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 10px;
+    background-color:  rgb(170, 170, 252);
+    font-size: 12px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.hint-block {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    background-color: #f4f6fb;
+    border-left-width:4px ;
+    border-left-color:#375637 ;
+    border-right-width: 4px ;
+    border-right-color:#375637;
+    border-radius: 8px;
+    color: red;
+
+}
+
+.btn-row  {
+    margin-top:32px ;
+    padding: 24px;
+    border-top: 2px solid red;
+}
+
+input[type="reset"].btn-reset {
+    padding: 13px 32px;
+    background-color: #f4f6fb;
+    color: #1a333c;
+    border-width: 2px ;
+    border-style: solid;
+    border-color: #375637;
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 16px;
+}
+
+input[type="reset"].btn-reset:hover {
+   background-color: rgb(215, 48, 48);
+   color: #ffffff ;
+}
+input[type="submit"].btn-submit {
+    padding: 13px 32px;
+    background-color: #f4f6fb;
+    color: #1a333c;
+    border-width: 2px ;
+    border-style: solid;
+    border-color: #375637;
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 16px;
+}
+
+input[type="submit"].btn-submit:hover {
+   background-color: rgb(170, 170, 252);
+   color: #ffffff ;
+}
+
+
+.footer {
+    background-color: #000000;
+    color: #ffff;
+    padding: 24px 48px;
+    border-radius: 0 0 16px 16px;
+    border-bottom: 6px solid #1a333c;
+    text-align: center;
+
+}
+
+.footer p {
+    color: #025e02;
+    font-size: 13px;
+    margin-bottom: 6px;
+    line-height: 1.7;
+}

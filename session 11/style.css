@@ -1,0 +1,13 @@
+body {
+   margin: 0;
+   height: 100vh;
+
+   background-image:
+   linear-gradient(rgba(25, 1, 204, 0.5), rgba(119, 1, 204, 0.5)), url("https://cdn.wallpapersafari.com/12/74/F9UnOK6.webp");
+   background-size: cover;
+   
+   background-repeat: no-repeat;
+   font-family: Arial, Helvetica, sans-serif;
+
+   background-attachment: fixed;
+}
