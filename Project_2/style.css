@@ -29,7 +29,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem
+    gap: 1.9rem
 }
 
 .nav-links a {
@@ -42,6 +42,20 @@ body {
     color:  rgb(9, 227, 235);
     font-weight: bold;
 }
+
+.auth-btn {
+  background-color: burlywood;
+    width: 100%;
+    max-width: 200px;  
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    
+
+}
+
 
 .hero{
     height: 80vh;
