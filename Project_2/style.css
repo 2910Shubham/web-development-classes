@@ -20,7 +20,10 @@ body {
 
 .logo {
     font-size: 1.5rem;
+    font-weight: bold;
     transition: 0.5s;
+    text-decoration: none;
+    color:cadetblue; ;
 }
 .logo:hover {
     font-size: 2rem;
