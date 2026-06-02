@@ -1,27 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram</title>
-   <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
     <header class="navbar">
-        <div class="nav-container">
-            <h2 class="logo">Instagram</h2>
+      <div class="nav-container">
+        <h2 class="logo">Instagram</h2>
 
-            <input type="text" placeholder="Search" class="search-box">
-            <div class="nav-icons">
-                <i class="fas fa-home"></i>
-                <i class="fas fa-paper-plane"></i>
-                <i class="fas fa-heart"></i>
+        <input type="text" placeholder="Search" class="search-box" />
+        <div class="nav-icons">
+          <!-- i tag -->
+          <i class="fas fa-home"></i>
+        <i class="fa-regular fa-paper-plane"></i>
+          <i class="fa-regular fa-heart"></i>
 
-                <img src="https://i.pravatar.cc/40" alt="profile" class="profile">
-
-            </div>
+          <img src="https://i.pravatar.cc/40" alt="profile" class="profile" />
         </div>
+      </div>
     </header>
-</body>
+
+    <main class="main-container">
+      <section class="feed">
+        <div class="stories">
+          <div class="story">
+            <img src="https://i.pravatar.cc/60?img=1" alt="story1" />
+          </div>
+
+          <div class="story">
+            <img src="https://i.pravatar.cc/60?img=2" alt="" />
+          </div>
+          <div class="story">
+            <img src="https://i.pravatar.cc/60?img=3" alt="" />
+          </div>
+          <div class="story">
+            <img src="https://i.pravatar.cc/60?img=4" alt="" />
+          </div>
+
+          <div class="story">
+            <img src="https://i.pravatar.cc/60?img=5" alt="" />
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post-top">
+            <div class="user">
+              <img src="https://i.pravatar.cc/60?img=8" alt="user-profile" />
+              <div>
+                <h4>Shubham</h4>
+                <span>Patna, Bihar</span>
+              </div>
+            </div>
+
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200"
+            alt=""
+            class="post-image"
+          />
+
+          <div class="post-actions">
+            <div class="left-icons">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-comment"></i>
+                <i class="fa-regular fa-paper-plane"></i>
+            </div>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+
+          <p class="likes">1,024 likes</p>
+
+          <p class="caption">
+            <b>Shubham</b>
+            Beautiful Nature
+          </p>
+
+          <p class="comments">View all 120 commnets</p>
+
+          <p class="time">2 HOURS AGO</p>
+
+          <div class="add-commnets">
+              <input type="text" placeholder="Add a comment...">
+
+              <button>Post</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

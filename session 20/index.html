@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML & CSS - Quiz 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --paper: #f5f0e8;
+    --ruled: #d4c9b0;
+    --accent: #c0392b;
+    --green: #27ae60;
+    --blue: #2c3e7a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e8e0d0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    /* font-weight: bold; */
+    /* font-style: oblique; */
+    /* text-align: left; */
+    min-height: 100vh;
+    padding: 30px 16px 60px;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 27px, #ccc5b0 27px, #ccc5b0 28px
+    );
+  }
+
+  .paper {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 2px;
+    padding: 48px 56px;
+    /* border: none; */
+    box-shadow: 4px 4px 0 #bbb, 8px 8px 0 #ccc, 0 20px 60px rgba(0,0,0,0.25);
+  }
+
+  .header { border-bottom: 3px double var(--ink); padding-bottom: 20px; margin-bottom: 32px; }
+
+  .school-name {
+    font-family: 'Merriweather', serif;
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 3px;
+    color: var(--blue); margin-bottom: 8px;
+  }
+
+  h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 26px; font-weight: 700;
+    color: var(--ink); line-height: 1.3;
+  }
+
+  .meta-row { display: flex; gap: 40px; margin-top: 16px; flex-wrap: wrap; }
+
+  .meta-item {
+    font-size: 13px; border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px; min-width: 140px;
+  }
+  .meta-item span { font-weight: 600; margin-right: 6px; }
+
+  .instructions {
+    background: #fff8e7; border-left: 4px solid var(--accent);
+    padding: 12px 16px; font-size: 13.5px;
+    margin-bottom: 36px; line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+  }
+  .instructions strong { color: var(--accent); }
+
+  /* ── SECTION BADGE ── */
+  .section-badge {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 16px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    margin-top: 32px;
+  }
+
+  .section-badge.css-badge { background: var(--accent); }
+
+  .section-label {
+    font-family: 'Merriweather', serif;
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: var(--blue);
+    border-bottom: 1px solid var(--ruled);
+    padding-bottom: 6px; margin-bottom: 24px;
+  }
+
+  .question-block { margin-bottom: 28px; padding-left: 8px; }
+
+  .question-text {
+    font-size: 15px; font-weight: 600;
+    line-height: 1.6; margin-bottom: 10px; color: var(--ink);
+  }
+
+  .q-num {
+    font-family: 'Merriweather', serif;
+    color: var(--accent); margin-right: 6px; font-size: 14px;
+  }
+
+  .tag-pill {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    padding: 2px 9px; border-radius: 20px;
+    margin-left: 8px; vertical-align: middle;
+    font-family: 'Courier New', monospace;
+  }
+  .tag-html { background: #dff0ff; color: #1a5a8a; border: 1px solid #a8d4f5; }
+  .tag-css  { background: #ffe8e8; color: #8a1a1a; border: 1px solid #f5a8a8; }
+
+  .options {
+    display: flex; flex-direction: column;
+    gap: 6px; padding-left: 24px;
+  }
+
+  .option {
+    display: flex; align-items: flex-start;
+    gap: 10px; cursor: pointer;
+    padding: 7px 12px; border-radius: 3px;
+    font-size: 14.5px; line-height: 1.5;
+    border: 1.5px solid transparent;
+    transition: all 0.15s ease; user-select: none;
+  }
+  .option:hover { background: #ede8dc; border-color: var(--ruled); }
+
+  .option input[type="radio"] {
+    margin-top: 3px; accent-color: var(--blue);
+    flex-shrink: 0; width: 16px; height: 16px; cursor: pointer;
+  }
+
+  .option.correct { background: #e8f8ef; border-color: var(--green); color: #1a6b3c; }
+  .option.wrong   { background: #fdf0ef; border-color: var(--accent); color: #8b1a12; text-decoration: line-through; }
+
+  .divider { border: none; border-top: 1px dashed var(--ruled); margin: 4px 0 28px; }
+
+  .submit-row {
+    text-align: center; margin-top: 40px;
+    padding-top: 28px; border-top: 3px double var(--ink);
+  }
+
+  #submit-btn {
+    font-family: 'Merriweather', serif;
+    font-size: 15px; font-weight: 700;
+    letter-spacing: 1.5px; background: var(--blue);
+    color: #fff; border: none; padding: 14px 52px;
+    cursor: pointer; border-radius: 2px;
+    box-shadow: 3px 3px 0 var(--ink); transition: all 0.15s;
+    text-transform: uppercase;
+  }
+  #submit-btn:hover { background: var(--ink); transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--blue); }
+  #submit-btn:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink); }
+
+  #result-box {
+    display: none; margin-top: 28px;
+    padding: 20px 28px; background: #fff;
+    border: 2px solid var(--ink); border-radius: 2px;
+    text-align: center; box-shadow: 4px 4px 0 var(--ink);
+  }
+  #result-box h2 { font-family: 'Merriweather', serif; font-size: 22px; margin-bottom: 8px; }
+  #result-box p  { font-size: 15px; color: #444; margin-bottom: 14px; }
+
+  .score-big {
+    font-family: 'Merriweather', serif; font-size: 48px;
+    font-weight: 700; color: var(--blue); line-height: 1; margin: 8px 0;
+  }
+
+  .score-breakdown {
+    display: flex; justify-content: center; gap: 32px;
+    margin: 12px 0 16px; flex-wrap: wrap;
+  }
+  .score-part {
+    font-size: 13px; padding: 6px 18px;
+    border-radius: 20px; font-weight: 600;
+  }
+  .score-part.html-part { background: #dff0ff; color: #1a5a8a; }
+  .score-part.css-part  { background: #ffe8e8; color: #8a1a1a; }
+
+  #retry-btn {
+    font-size: 14px; font-weight: 600;
+    background: transparent; color: var(--accent);
+    border: 2px solid var(--accent); padding: 8px 28px;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.15s; margin-top: 4px;
+  }
+  #retry-btn:hover { background: var(--accent); color: #fff; }
+
+  @media (max-width: 600px) {
+    .paper { padding: 32px 22px; }
+    .meta-row { gap: 20px; }
+  }
+
+  .myclass {
+
+  }
+</style>
+</head>
+<body>
+
+<div class="paper">
+  <div class="header">
+    <div class="school-name">Web Development &mdash; Class Test</div>
+    <h1>HTML &amp; CSS &nbsp;&mdash;&nbsp; Quiz 3 &nbsp;(40 Questions)</h1>
+    <!-- <div class="meta-row">
+      <div class="meta-item"><span>Name:</span> ___________________</div>
+      <div class="meta-item"><span>Roll No.:</span> __________</div>
+      <div class="meta-item"><span>Date:</span> ___________</div>
+      <div class="meta-item"><span>Marks:</span> &nbsp;/ 40</div>
+    </div> -->
+  </div>
+
+  <div class="instructions">
+    <strong>Instructions:</strong> Each question carries <strong>1 mark</strong>. Choose the <strong>one correct answer</strong>. No negative marking. Attempt all 40 questions. &nbsp;
+    <span style="background:#dff0ff;color:#1a5a8a;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:700;">HTML</span>
+    &nbsp;and&nbsp;
+    <span style="background:#ffe8e8;color:#8a1a1a;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:700;">CSS</span>
+    &nbsp;labels show which topic each question is from.
+  </div>
+
+  <div id="quiz-form"></div>
+
+  <div class="submit-row">
+    <button id="submit-btn" onclick="submitQuiz()">Submit Paper</button>
+    <div id="result-box">
+      <p>Your Score</p>
+      <div class="score-big" id="score-display">0 / 40</div>
+      <div class="score-breakdown">
+        <div class="score-part html-part" id="html-score">HTML: 0 / 20</div>
+        <div class="score-part css-part"  id="css-score">CSS: 0 / 20</div>
+      </div>
+      <p id="result-msg"></p>
+      <button id="retry-btn" onclick="retryQuiz()">Try Again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// tag: 'html' or 'css' — used for score breakdown
+const questions = [
+
+  // ════════════════════════════════
+  //  HTML — 20 QUESTIONS  (Q1–Q20)
+  // ════════════════════════════════
+  {
+    tag: 'html',
+    q: "Which tag is used to define a TABLE in HTML?",
+    opts: ["tr", "td", "table", "tbl"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "Which tag defines a TABLE ROW?",
+    opts: ["td", "th", "tr", "row"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "Which tag defines a TABLE DATA CELL (regular cell)?",
+    opts: ["tr", "th", "tc", "td"],
+    ans: 3
+  },
+  {
+    tag: 'html',
+    q: "Which tag defines a TABLE HEADER CELL (bold and centred by default)?",
+    opts: ["thead", "th", "td", "header"],
+    ans: 1
+  },
+  {
+    tag: 'html',
+    q: "What does the 'border' attribute do when written inside the table tag?",
+    opts: [
+      "Adds a CSS border to the page",
+      "Adds a visible border around the table and its cells",
+      "Removes the table border",
+      "Adds colour to the table"
+    ],
+    ans: 1
+  },
+  {
+    tag: 'html',
+    q: "Which HTML tag is used to create a DROPDOWN list in a form?",
+    opts: ["input", "dropdown", "select", "list"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "Which tag represents each OPTION inside a dropdown (select)?",
+    opts: ["item", "li", "choice", "option"],
+    ans: 3
+  },
+  {
+    tag: 'html',
+    q: "What is the correct tag for a MULTI-LINE text input in a form?",
+    opts: ["input type='multiline'", "input type='text'", "textarea", "textbox"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "Which attribute makes an input field REQUIRED (cannot submit without filling it)?",
+    opts: ["mandatory", "needed", "must", "required"],
+    ans: 3
+  },
+  {
+    tag: 'html',
+    q: "Which attribute shows PLACEHOLDER / hint text inside an input before the user types?",
+    opts: ["hint", "default", "placeholder", "value"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "What is the purpose of the 'for' attribute in a label tag?",
+    opts: [
+      "To apply CSS styling",
+      "To link the label to a specific input using the input's id",
+      "To loop through form fields",
+      "To set the font of the label"
+    ],
+    ans: 1
+  },
+  {
+    tag: 'html',
+    q: "Which input type is best for entering a PHONE NUMBER?",
+    opts: ["type='text'", "type='number'", "type='tel'", "type='phone'"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "What does the 'action' attribute in a form tag do?",
+    opts: [
+      "Decides the form's visual style",
+      "Sets which HTTP method to use",
+      "Specifies where to send the form data when submitted",
+      "Sets the form's background colour"
+    ],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "What does the 'method' attribute in a form tag decide?",
+    opts: [
+      "The design of the form",
+      "How the form data is sent — GET or POST",
+      "Which CSS file to use",
+      "The number of inputs in the form"
+    ],
+    ans: 1
+  },
+  {
+    tag: 'html',
+    q: "Which HTML tag groups table header rows — thead, tbody, tfoot. Which one contains the MAIN DATA rows?",
+    opts: ["thead", "tfoot", "tbody", "tdata"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "The 'colspan' attribute in a table is used to:",
+    opts: [
+      "Make a cell span across multiple COLUMNS",
+      "Make a cell span across multiple ROWS",
+      "Set the colour of a column",
+      "Add padding to a cell"
+    ],
+    ans: 0
+  },
+  {
+    tag: 'html',
+    q: "The 'rowspan' attribute in a table is used to:",
+    opts: [
+      "Make a cell span across multiple COLUMNS",
+      "Set the height of a row",
+      "Make a cell span across multiple ROWS",
+      "Add spacing between rows"
+    ],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "Which HTML tag is used to link a CSS file?",
+    opts: ["style", "css", "link", "connect"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "Which attribute of the link tag tells the browser the RELATIONSHIP of the linked file?",
+    opts: ["href", "type", "rel", "src"],
+    ans: 2
+  },
+  {
+    tag: 'html',
+    q: "To write CSS DIRECTLY inside an HTML file (not external), which tag do you use?",
+    opts: ["css", "link", "script", "style"],
+    ans: 3
+  },
+
+  // ════════════════════════════════
+  //  CSS — 20 QUESTIONS  (Q21–Q40)
+  // ════════════════════════════════
+  {
+    tag: 'css',
+    q: "In CSS, what does a SELECTOR do?",
+    opts: [
+      "It stores data",
+      "It targets the HTML element(s) you want to style",
+      "It connects two HTML pages",
+      "It adds JavaScript behaviour"
+    ],
+    ans: 1
+  },
+  {
+    tag: 'css',
+    q: "How do you select an element by its ID in CSS?",
+    opts: [".myId", "*myId", "#myId", "myId"],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "How do you select an element by its CLASS in CSS?",
+    opts: ["#myClass", ".myClass", "*myClass", "@myClass"],
+    ans: 1
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property changes the SIZE of text?",
+    opts: ["text-size", "font-size", "size", "letter-size"],
+    ans: 1
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property changes the FONT FAMILY (typeface) of text?",
+    opts: ["font-style", "text-family", "font-family", "typeface"],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property makes text BOLD?",
+    opts: ["font-style", "text-bold", "bold", "font-weight"],
+    ans: 3
+  },
+  {
+    tag: 'css',
+    q: "Which value of font-weight makes text BOLD?",
+    opts: ["heavy", "strong", "bold", "700 or bold (both correct)"],
+    ans: 3
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property makes text ITALIC?",
+    opts: ["font-weight: italic", "text-style: italic", "font-style: italic", "italic: true"],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property UNDERLINES text?",
+    opts: ["font-decoration", "text-style", "text-decoration: underline", "underline: true"],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property controls the SPACE BETWEEN LINES of text?",
+    opts: ["line-spacing", "letter-spacing", "text-height", "line-height"],
+    ans: 3
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property ALIGNS TEXT — left, right, centre?",
+    opts: ["text-position", "align", "font-align", "text-align"],
+    ans: 3
+  },
+  {
+    tag: 'css',
+    q: "What does 'margin: auto' do when applied to a block element with a fixed width?",
+    opts: [
+      "Removes all margin",
+      "Adds automatic top and bottom spacing",
+      "Centers the element horizontally on the page",
+      "Makes the element full width"
+    ],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "What is the difference between 'padding' and 'margin'?",
+    opts: [
+      "They are the same thing",
+      "Padding is space INSIDE the border; margin is space OUTSIDE the border",
+      "Margin is space INSIDE the border; padding is space OUTSIDE",
+      "Padding is only for text; margin is only for images"
+    ],
+    ans: 1
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property sets the MAXIMUM WIDTH an element can grow to?",
+    opts: ["width", "min-width", "max-width", "limit-width"],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "What does 'box-sizing: border-box' do?",
+    opts: [
+      "Removes the border from the element",
+      "Adds a box shadow",
+      "Includes padding and border INSIDE the element's total width and height",
+      "Makes the element a square"
+    ],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property makes content NOT VISIBLE but still takes up space on the page?",
+    opts: ["display: none", "visibility: hidden", "opacity: 0", "hidden: true"],
+    ans: 1
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property completely REMOVES an element from the page layout?",
+    opts: ["visibility: hidden", "opacity: 0", "display: none", "remove: true"],
+    ans: 2
+  },
+  {
+    tag: 'css',
+    q: "Which CSS shorthand sets ALL FOUR sides of padding at once equally?",
+    opts: [
+      "padding: top right bottom left",
+      "padding: 20px 20px 20px 20px",
+      "padding: 20px  (single value applies to all 4 sides)",
+      "Both B and C are correct"
+    ],
+    ans: 3
+  },
+  {
+    tag: 'css',
+    q: "When writing 'border: 2px solid #000', what do the three values mean in order?",
+    opts: [
+      "colour, style, width",
+      "style, width, colour",
+      "width, colour, style",
+      "width, style, colour"
+    ],
+    ans: 3
+  },
+  {
+    tag: 'css',
+    q: "Which CSS property adds a SHADOW behind an element's BOX?",
+    opts: ["text-shadow", "element-shadow", "box-shadow", "shadow"],
+    ans: 2
+  }
+
+];
+
+function escapeHTML(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function buildQuiz() {
+  const form = document.getElementById('quiz-form');
+  form.innerHTML = '';
+  let currentSection = '';
+
+  questions.forEach((item, idx) => {
+
+    // Section header when section changes
+    if (item.tag !== currentSection) {
+      currentSection = item.tag;
+      const badge = document.createElement('div');
+      if (item.tag === 'html') {
+        badge.innerHTML = `
+          <div class="section-badge">Section A &mdash; HTML Questions (Q1 &ndash; Q20)</div>
+          <div class="section-label">HTML Tags, Forms, Tables &amp; Structure</div>
+        `;
+      } else {
+        badge.innerHTML = `
+          <div class="section-badge css-badge">Section B &mdash; CSS Questions (Q21 &ndash; Q40)</div>
+          <div class="section-label">CSS Selectors, Box Model, Colors &amp; Typography</div>
+        `;
+      }
+      form.appendChild(badge);
+    }
+
+    const block = document.createElement('div');
+    block.className = 'question-block';
+    block.id = `q-block-${idx}`;
+
+    const tagPill = item.tag === 'html'
+      ? `<span class="tag-pill tag-html">HTML</span>`
+      : `<span class="tag-pill tag-css">CSS</span>`;
+
+    const qText = document.createElement('div');
+    qText.className = 'question-text';
+    qText.innerHTML = `<span class="q-num">Q${idx + 1}.</span>${escapeHTML(item.q)}${tagPill}`;
+    block.appendChild(qText);
+
+    const opts = document.createElement('div');
+    opts.className = 'options';
+
+    item.opts.forEach((opt, oi) => {
+      const label = document.createElement('label');
+      label.className = 'option';
+      label.innerHTML = `
+        <input type="radio" name="q${idx}" value="${oi}">
+        <span>${String.fromCharCode(65 + oi)}) ${escapeHTML(opt)}</span>
+      `;
+      opts.appendChild(label);
+    });
+
+    block.appendChild(opts);
+
+    if (idx < questions.length - 1) {
+      const hr = document.createElement('hr');
+      hr.className = 'divider';
+      block.appendChild(hr);
+    }
+
+    form.appendChild(block);
+  });
+}
+
+function submitQuiz() {
+  let total = 0, htmlScore = 0, cssScore = 0;
+  let unanswered = 0;
+
+  questions.forEach((item, idx) => {
+    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+    const block = document.getElementById(`q-block-${idx}`);
+    const allLabels = block.querySelectorAll('.option');
+    const allRadios = block.querySelectorAll('input[type="radio"]');
+    allRadios.forEach(r => r.disabled = true);
+
+    if (!selected) {
+      unanswered++;
+      allLabels[item.ans].classList.add('correct');
+    } else {
+      const val = parseInt(selected.value);
+      if (val === item.ans) {
+        total++;
+        if (item.tag === 'html') htmlScore++; else cssScore++;
+        allLabels[val].classList.add('correct');
+      } else {
+        allLabels[val].classList.add('wrong');
+        allLabels[item.ans].classList.add('correct');
+      }
+    }
+  });
+
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('submit-btn').style.opacity = '0.5';
+
+  const resultBox = document.getElementById('result-box');
+  resultBox.style.display = 'block';
+  document.getElementById('score-display').textContent = `${total} / 40`;
+  document.getElementById('html-score').textContent = `HTML: ${htmlScore} / 20`;
+  document.getElementById('css-score').textContent  = `CSS: ${cssScore} / 20`;
+
+  const pct = (total / 40) * 100;
+  let msg = '';
+  if (pct >= 90)      msg = '🎉 Outstanding! You have mastered the basics!';
+  else if (pct >= 70) msg = '👍 Good work! A little more practice and you will be perfect!';
+  else if (pct >= 50) msg = '📚 Average. Go back and revise the weaker topics.';
+  else                msg = '⚠️ Needs more practice. Study HTML and CSS again carefully.';
+
+  if (unanswered > 0) msg += ` (${unanswered} question${unanswered > 1 ? 's' : ''} unanswered)`;
+  document.getElementById('result-msg').textContent = msg;
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function retryQuiz() {
+  document.getElementById('submit-btn').disabled = false;
+  document.getElementById('submit-btn').style.opacity = '1';
+  document.getElementById('result-box').style.display = 'none';
+  buildQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+buildQuiz();
+</script>
+<div id="new"></div>
+
+
+</body>
+</html>
