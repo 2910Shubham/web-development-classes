@@ -1,146 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Profile Clone</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Instagram</div>
 
-    <link rel="stylesheet" href="profile.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-
-<header class="navbar">
-
-    <div class="logo">
-        Instagram
-    </div>
-
-    <div class="nav-icons">
+      <div class="nav-icons">
         <i class="fas fa-home"></i>
-        <i class="far fa-paper-plane"></i>
-        <i class="far fa-heart"></i>
-        <i class="far fa-user"></i>
-    </div>
+        <i class="fa-regular fa-paper-plane"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fas fa-user"></i>
+      </div>
+    </header>
 
-</header>
-
-<main class="profile-container">
-
-    <!-- Profile Header -->
-
-    <section class="profile-header">
-
+    <main class="profile-container">
+      <section class="profile-header">
         <div class="profile-image">
-
-            <img src="https://i.pravatar.cc/200?img=12">
-
+          <img src="https://i.pravatar.cc/60?img=1" alt="profile-pic" />
         </div>
 
-        <div class="profile-info">
-
-            <div class="top-row">
-
-                <h2>shubham_dev</h2>
-
-                <button>Edit Profile</button>
-
-                <i class="fas fa-cog"></i>
-
-            </div>
-
-            <div class="stats">
-
-                <p><b>120</b> posts</p>
-                <p><b>5.2k</b> followers</p>
-                <p><b>340</b> following</p>
-
-            </div>
-
-            <div class="bio">
-
-                <h4>Shubham</h4>
-
-                <p>
-                    MCA Student 🚀
-                    <br>
-                    Frontend Developer
-                    <br>
-                    Patna, India
-                </p>
-
-            </div>
-
+        <div class="top-row">
+          <h2>shubham_dev</h2>
+          <button>Edit Profile</button>
+          <i class="fas fa-gear"></i>
         </div>
+        <div class="stats">
+          <p><b>120</b> posts</p>
+          <p><b>5.2k</b> followers</p>
+          <p><b>340</b> followings</p>
+        </div>
+        <div class="bio">
+          <h4>Shubham</h4>
+          <p>MCA,Student</p>
+          <p>Frontend Developer</p>
+          <p>Patna, Bihar</p>
+        </div>
+      </section>
 
-    </section>
-
-    <!-- Highlights -->
-
-    <section class="highlights">
-
+      <section class="highlights">
         <div class="highlight">
-            <img src="https://i.pravatar.cc/80?img=1">
-            <p>Travel</p>
+          <img src="https://i.pravatar.cc/80?img=2" />
+          <p>Travel</p>
         </div>
-
         <div class="highlight">
-            <img src="https://i.pravatar.cc/80?img=2">
-            <p>Food</p>
+          <img src="https://i.pravatar.cc/80?img=5" />
+          <p>Food</p>
         </div>
-
         <div class="highlight">
-            <img src="https://i.pravatar.cc/80?img=3">
-            <p>Coding</p>
+          <img src="https://i.pravatar.cc/80?img=3" />
+          <p>Coding</p>
         </div>
-
         <div class="highlight">
-            <img src="https://i.pravatar.cc/80?img=4">
-            <p>Friends</p>
+          <img src="https://i.pravatar.cc/80?img=8" />
+          <p>Friends</p>
         </div>
-
-    </section>
-
-    <!-- Tabs -->
-
-    <section class="tabs">
-
+      </section>
+      <section class="tabs">
         <div class="tab active">
-            <i class="fas fa-th"></i>
-            POSTS
+          <i class="fas fa-th"> POSTS</i>
         </div>
 
         <div class="tab">
-            <i class="fas fa-video"></i>
-            REELS
+          <i class="fas fa-video"> REELS</i>
         </div>
 
-        <div class="tab">
-            <i class="far fa-bookmark"></i>
-            SAVED
-        </div>
-
-    </section>
-
-    <!-- Posts Grid -->
-
-    <section class="posts-grid">
-
-        <img src="https://picsum.photos/400?1">
-        <img src="https://picsum.photos/400?2">
-        <img src="https://picsum.photos/400?3">
-        <img src="https://picsum.photos/400?4">
-        <img src="https://picsum.photos/400?5">
-        <img src="https://picsum.photos/400?6">
-        <img src="https://picsum.photos/400?7">
-        <img src="https://picsum.photos/400?8">
-        <img src="https://picsum.photos/400?9">
-
-    </section>
-
-</main>
-
-</body>
+        <div class="fas fa-bookmark">SAVED</div>
+      </section>
+      <section class="posts-grid">
+        <img src="https://picsum.photos/400?12" alt="post1" />
+        <img src="https://picsum.photos/400?13" alt="post2" />
+        <img src="https://picsum.photos/400?14" alt="post3" />
+        <img src="https://picsum.photos/400?16" alt="post4" />
+        <img src="https://picsum.photos/400?17" alt="post5" />
+        <img src="https://picsum.photos/400?18" alt="post6" />
+      </section>
+    </main>
+  </body>
 </html>
