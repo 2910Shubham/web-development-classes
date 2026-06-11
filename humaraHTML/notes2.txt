@@ -1,0 +1,57 @@
+Student List
+
+1. Rahul
+2. Rani
+3. Raju
+4. Rohit
+5. Raj mata shivgami devi
+
+
+can we do like this...??
+
+<h1> 1. Rahul </h1>
+<h1> 2. Rani </h1>
+<h1> 1. Rahul </h1>
+<h1> 1. Rahul </h1>
+<h1> 1. Rahul </h1>
+
+
+What is list..?
+
+
+Type of lists :- 
+
+1. Ordered List :
+
+Ye ek aisi list hoti hai jisme hume serial wise numbering milti hai ya alphabates ya roman no. milte hain...
+
+dihte kiase hain ye...?
+
+1. Rahul
+2. Rani
+3. Raju
+4. Rohit
+5. Raj mata shivgami devi
+
+ya
+
+
+a. Rahul
+b. Rani
+c. Raju
+d. Rohit
+e. Raj mata shivgami devi
+
+
+2. UnOrdered List
+
+. Rahul
+. Rani
+. Raju
+. Rohit
+. Raj mata shivgami devi
+
+
+
+
+

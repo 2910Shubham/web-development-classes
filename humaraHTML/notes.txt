@@ -1,0 +1,67 @@
+What is HTML..?
+
+HTML stands for Hyper text markup language.
+
+
+What is markup language..?
+
+:- it descriobes the content using tags.
+
+Why HTML...?
+
+:- Structure provide karta hai.
+browser ko batata hai kya heading hai, kya paragraph hai,
+kya image hai.....
+
+ >> HTML Structure
+
+ 1. <!DOCTYPE html>
+
+ -> Ye Browser ko batata hai ki document HTML5 hai.
+
+ 2. <html>
+
+ -> html tag pure HTML document ka root hota hai.
+
+ 3. <head>
+
+ -> Metadata rakhti hai
+
+ 4. <title>
+
+ -> Browser tab ka title set karti hai.
+
+ 5. <body>
+ 
+ -> Jitna bhi web page par visible content hota hai wo sabhi 
+ <body> ke andar hi likhi hoti hai
+
+ >> What is Tag..?
+ -> "Tag" browser ko batata hai ki content ka purpose kya hai.
+
+ >> What is Attribute..?
+ -> Attribute tags ke baare me extra information deta hai.
+
+>> What is the purpose of <u> tag..?
+-> It just add an underline to the text inside it?
+
+>> What is <b> tag..?
+-> B tag kisi content ke font weight ko Bold karne me istemal hota hai.
+
+>> What is <i> tag..?
+-> <i> tag is basically used to write a content in Italic.
+
+>> What is br tag..?
+
+-> br tag ka use line break krne me hota hai.
+
+>> What is HR tag ?
+-> HR tag ka use ek horizontal line lagane ke liye hota hai
+
+>> Strong tag.
+-> it is used for writing content in bold with simentisity
+
+>> em tag.
+
+-> it is used to write content in Italic with simentisity
+
