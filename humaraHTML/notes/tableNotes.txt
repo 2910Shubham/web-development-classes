@@ -55,4 +55,35 @@ syntax:
 
 Table ko left, right, center me align karta hai
 
+4. Cellpadding :
 
+cell ke andar space create karta hai.
+
+ye abhi bina Cellpadding ke
+______
+|Name|
+
+Cellpadding ke bad
+
+___________
+|          |
+|   Name   |
+|__________|
+
+
+5. CellSpacing :
+
+CellSpacing cells ke beech ka gap set krta hai.
+
+___________
+|          |
+|   Name   |
+|__________|
+___________  >>>> ye jo spacing hai wahi to CellSpacing hai
+|          |
+|   Name   |
+|__________|
+
+6. Colspan and Rowspan Attributes
+
+i) Colspan
