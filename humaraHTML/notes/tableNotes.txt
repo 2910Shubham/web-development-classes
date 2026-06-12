@@ -1,0 +1,58 @@
+                            Tables
+                   How to create a table in HTML
+                   some more tags and attributes
+
+Table : Table ka use web page par data ko row and column ke 
+        form me display karne me hota hai.
+
+      
+        Employee Id.  Name      Designation
+           01         Vivek      CEO
+           02         Raju       CTO
+           03         Laleeta    BDO
+           04         Sundar     CMO
+
+
+##Structure of Tables in HTML (we need just 3 tags)
+
+#Table Tags
+
+1. <table> :- ye table create karta hai
+       
+syntax: 
+
+     <table>  </table>
+
+2. <tr> : Table rows create karta hai.
+
+syntax: <tr> </tr>
+
+3. <td> : Table Data ke cell ko create karega
+
+syntax : <td> </td>
+
+4. <th> : ye table ke head data cells create karta hai.
+
+
+#Table Attributes
+
+1. Border Attributes
+
+Table ke around border lagata hai.
+
+syntax: 
+
+<table border="1">  //Note: it will still work if you left the double quotes empty ("")
+
+2. Width Attributes
+Table ki Width update kr deta hai.
+
+syntax: 
+
+<table border="1" width="50%"> 
+
+3. Align Attributes :
+
+Table ko left, right, center me align karta hai
+
+
