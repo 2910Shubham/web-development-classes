@@ -84,6 +84,6 @@ ___________  >>>> ye jo spacing hai wahi to CellSpacing hai
 |   Name   |
 |__________|
 
-6. Colspan and Rowspan Attributes
 
-i) Colspan
+
+
