@@ -1,0 +1,33 @@
+                                CSS
+1. What is CSS?
+>>It stands for Cascafing Style Sheets.
+
+CSS is uded to make our web pages look beutiful and attractive.
+
+2. Why CSS is needed ?
+
+3. CSS syntax
+4. Types of CSS
+      i. Inline CSS
+     ii. Internal CSS
+    iii. External CSS
+
+5. Selectors and its Types
+
+Element selcetor :_ wo jo directly html ke Element ko target kare.
+
+class selctor : yaha pe hum eke class ka name dena padta hai.
+
+ID selcetor : ye id wise selcet karta hai
+
+6. Properties of CSS
+
+1. color : ye color change karta hai
+2. backhround : ye backgroud ka color chnage karta hai.
+3. text-align : ye text ko top , bottom, left ,right karta 
+
+4. font-size: ye text ki size kum ya jyada karega.
+
+5. font-weight : ye text ki motai bachayega.
+
+

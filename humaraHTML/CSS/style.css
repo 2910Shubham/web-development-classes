@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    color: white;
+     border: 10px solid rgb(0, 255, 21);
+        margin: 100px;
+        padding: 50px;
+
+
+
+
+}
+
+h1 {
+    color: blue;
+    font-size: 32px;
+}
+
+p {
+
+    font-size: xx-large;
+    font-weight: 800;
+}
+
+table {
+    background-color: black;
+    color: aquamarine;
+}
+
+div {
+    align-items: center;
+}

@@ -1,0 +1,18 @@
+/* screen ke background ko Black Karna hai   (ho gya) */
+/* aur screen ke content ka color white karo (ho gya)*/
+/* div ko ek red color ka border create karn hai (ho gya)*/
+/* div ko body ke border se andar lana hai (ho gya)*/
+/*  div ke content ko border se andar lana hai (ho gya) */
+
+body {
+    background-color: black;
+    color: white;
+    
+}
+
+div {
+    border: 10px dotted red;
+    margin: 100px;
+    padding: 50px;
+}
+
