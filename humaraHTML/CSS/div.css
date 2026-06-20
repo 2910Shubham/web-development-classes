@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+    margin: 100px;
+}
+
+#div1 {
+    background-color: bisque;
+   
+}
+div {
+    background-color: rgb(193, 122, 30);
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+}

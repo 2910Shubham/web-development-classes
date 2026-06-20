@@ -4,15 +4,23 @@
 /* div ko body ke border se andar lana hai (ho gya)*/
 /*  div ke content ko border se andar lana hai (ho gya) */
 
+
+ html {
+    background-color: rgb(8, 0, 255);
+} 
+
 body {
-    background-color: black;
+    background-color: rgb(232, 19, 19);
     color: white;
+   
+    padding: 100px ;
+    
     
 }
 
 div {
-    border: 10px dotted red;
-    margin: 100px;
-    padding: 50px;
+    border: 10px solid rgb(13, 255, 0);
+
+  
 }
 
