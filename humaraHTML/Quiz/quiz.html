@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML Basics – Quiz 1 (New Batch)</title>
+<title>HTML Basics - Quiz 1 (New Batch)</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap');
 
@@ -191,8 +191,8 @@
 <div class="paper">
 
   <div class="header">
-    <div class="school-name">Web Development —&nbsp;|&nbsp; Quiz 1</div>
-    <h1>HTML Fundamentals &nbsp;—&nbsp; Multiple Choice Quiz</h1>
+    <div class="school-name">Web Development&nbsp;|&nbsp; Quiz 2</div>
+    <h1>HTML and CSS Fundamentals &nbsp;-&nbsp; Multiple Choice Quiz</h1>
   </div>
 
   <div class="instructions">
@@ -220,277 +220,198 @@
 <script>
 // topic: shown as a section heading above first question of each group
 const questions = [
-
-  // ══════════════════════════════════════
-  //  WEB BASICS  (Q1 – Q7)
-  // ══════════════════════════════════════
   {
-    topic: "🌐  Web Basics & Introduction",
-    q: "What is the INTERNET?",
-    opts: [
-      "A single website",
-      "A global network of computers connected together",
-      "A type of browser",
-      "A programming language"
-    ], ans: 1
-  },
-  {
-    q: "What is a WEBSITE?",
-    opts: [
-      "A single web page",
-      "A collection of related web pages under one domain",
-      "An internet browser",
-      "A type of server"
-    ], ans: 1
-  },
-  {
-    q: "What is a WEB PAGE?",
-    opts: [
-      "A folder on your computer",
-      "A collection of all websites",
-      "A single document/page that you view in a browser",
-      "A browser application"
-    ], ans: 2
-  },
-  {
+    topic: "HTML Basics",
     q: "What does HTML stand for?",
     opts: [
-      "High Transfer Markup Language",
-      "Hyper Text Makeup Language",
       "Hyper Text Markup Language",
-      "Home Tool Markup Language"
-    ], ans: 2
-  },
-  {
-    q: "Who is the FOUNDER / INVENTOR of HTML?",
-    opts: [
-      "Bill Gates",
-      "Mark Zuckerberg",
-      "Brendan Eich",
-      "Tim Berners-Lee"
-    ], ans: 3
-  },
-  {
-    q: "In web development, HTML is compared to which part of a HOUSE?",
-    opts: [
-      "The paint and colours",
-      "The electrical wiring and lights",
-      "The framework / skeleton / structure",
-      "The furniture inside"
-    ], ans: 2
-  },
-  {
-    q: "In the house construction example, which technology is compared to PAINT & DECORATION?",
-    opts: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Server"
-    ], ans: 1
-  },
-  {
-    q: "In the house construction example, which technology is compared to ELECTRICAL WIRING & LIGHTS?",
-    opts: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Database"
-    ], ans: 2
-  },
-
-  // ══════════════════════════════════════
-  //  TAGS & ATTRIBUTES  (Q9 – Q13)
-  // ══════════════════════════════════════
-  {
-    topic: "🏷️  Tags & Attributes",
-    q: "What is an HTML TAG?",
-    opts: [
-      "A keyword surrounded by angle brackets < > used to define elements",
-      "A CSS property",
-      "A JavaScript function",
-      "A folder on the server"
+      "High Text Machine Language",
+      "Hyper Transfer Markup Language",
+      "Hyperlink Text Management Language"
     ], ans: 0
   },
   {
-    q: "Which of these is the correct syntax for an HTML tag?",
-    opts: [
-      "[h1] Heading [/h1]",
-      "{h1} Heading {/h1}",
-      "<h1> Heading </h1>",
-      "(h1) Heading (/h1)"
-    ], ans: 2
-  },
-  {
-    q: "What is an HTML ATTRIBUTE?",
-    opts: [
-      "A CSS style rule",
-      "Extra information given inside an opening tag to modify the element",
-      "A JavaScript event",
-      "A closing tag"
-    ], ans: 1
-  },
-  {
-    q: "Where is an attribute written in an HTML tag?",
-    opts: [
-      "Inside the closing tag",
-      "After the closing tag",
-      "Inside the opening tag",
-      "Between the opening and closing tag"
-    ], ans: 2
-  },
-  {
-    q: "Which of the following is a correct example of an attribute?",
-    opts: [
-      "<p> color=red </p>",
-      "<img src='photo.jpg'>",
-      "<h1 /bold>",
-      "<a> link </a>"
-    ], ans: 1
-  },
-
-  // ══════════════════════════════════════
-  //  HEADING TAGS  (Q14 – Q18)
-  // ══════════════════════════════════════
-  {
-    topic: "📝  Heading Tags — H1 to H6",
-    q: "How many heading tags are there in HTML?",
-    opts: ["3", "4", "5", "6"],
-    ans: 3
-  },
-  {
-    q: "Which heading tag produces the LARGEST text?",
-    opts: ["<h6>", "<h4>", "<h2>", "<h1>"],
-    ans: 3
-  },
-  {
-    q: "Which heading tag produces the SMALLEST text?",
-    opts: ["<h1>", "<h3>", "<h5>", "<h6>"],
-    ans: 3
-  },
-  {
-    q: "Heading tags are numbered from H1 to H6. As the number INCREASES, the text size:",
-    opts: [
-      "Gets larger",
-      "Stays the same",
-      "Gets smaller",
-      "Becomes bold only"
-    ], ans: 2
-  },
-  {
-    q: "Which tag would you use for the MAIN TITLE of a webpage?",
-    opts: ["<h6>", "<h3>", "<h1>", "<title>"],
-    ans: 2
-  },
-
-  // ══════════════════════════════════════
-  //  TEXT FORMATTING TAGS  (Q19 – Q27)
-  // ══════════════════════════════════════
-  {
-    topic: "✏️  Text Formatting Tags",
-    q: "Which tag makes text BOLD?",
-    opts: ["<i>", "<u>", "<b>", "<em>"],
+    q: "Which tag is used to create the largest heading?",
+    opts: ["<head>", "<h6>", "<h1>", "<title>"],
     ans: 2
   },
   {
-    q: "Which tag makes text ITALIC?",
-    opts: ["<b>", "<i>", "<u>", "<strong>"],
+    q: "Which tag is used to create a paragraph?",
+    opts: ["<para>", "<p>", "<paragraph>", "<text>"],
     ans: 1
   },
   {
-    q: "Which tag adds UNDERLINE to text?",
-    opts: ["<b>", "<i>", "<u>", "<br>"],
+    q: "Which tag is used to insert a line break?",
+    opts: ["<break>", "<lb>", "<br>", "<new>"],
     ans: 2
   },
   {
-    q: "What is the difference between <b> and <strong>?",
+    q: "Which tag is used to create a horizontal line?",
+    opts: ["<line>", "<hr>", "<hline>", "<br>"],
+    ans: 1
+  },
+  {
+    q: "Which tag is used to display an image?",
+    opts: ["<image>", "<img>", "<pic>", "<src>"],
+    ans: 1
+  },
+  {
+    q: "Which attribute specifies the image path?",
+    opts: ["href", "alt", "src", "link"],
+    ans: 2
+  },
+  {
+    q: "Which tag is used to create a hyperlink?",
+    opts: ["<link>", "<a>", "<href>", "<url>"],
+    ans: 1
+  },
+  {
+    q: "Which attribute is used with the <a> tag?",
+    opts: ["src", "action", "href", "target"],
+    ans: 2
+  },
+  {
+    q: "Which tag creates an unordered list?",
+    opts: ["<ol>", "<list>", "<ul>", "<li>"],
+    ans: 2
+  },
+  {
+    q: "Which tag creates an ordered list?",
+    opts: ["<ol>", "<ul>", "<list>", "<order>"],
+    ans: 0
+  },
+  {
+    q: "Which tag creates list items?",
+    opts: ["<item>", "<li>", "<list>", "<ul>"],
+    ans: 1
+  },
+  {
+    topic: "HTML Tables",
+    q: "Which tag is used to create a table?",
+    opts: ["<tb>", "<table>", "<tr>", "<td>"],
+    ans: 1
+  },
+  {
+    q: "Which tag creates a table row?",
+    opts: ["<td>", "<th>", "<tr>", "<row>"],
+    ans: 2
+  },
+  {
+    q: "Which tag creates a table data cell?",
+    opts: ["<th>", "<cell>", "<tr>", "<td>"],
+    ans: 3
+  },
+  {
+    q: "Which tag creates a table heading cell?",
+    opts: ["<thead>", "<head>", "<th>", "<td>"],
+    ans: 2
+  },
+  {
+    q: "Which attribute merges columns?",
+    opts: ["rowspan", "colspan", "merge", "combine"],
+    ans: 1
+  },
+  {
+    q: "Which attribute merges rows?",
+    opts: ["rowspan", "colspan", "merge-row", "rows"],
+    ans: 0
+  },
+  {
+    q: "Which CSS property removes double table borders?",
+    opts: ["border-style", "border-spacing", "border-collapse", "border-width"],
+    ans: 2
+  },
+  {
+    topic: "CSS Basics",
+    q: "CSS stands for:",
     opts: [
-      "They are completely different tags with no relation",
-      "<b> makes text bold visually; <strong> also makes it bold but adds importance/meaning for SEO and screen readers",
-      "<b> is for CSS; <strong> is for HTML",
-      "<strong> makes text bigger; <b> makes text bold"
+      "Computer Style Sheets",
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Colorful Style Sheets"
+    ], ans: 2
+  },
+  {
+    q: "Which HTML tag is used for Internal CSS?",
+    opts: ["<css>", "<style>", "<script>", "<link>"],
+    ans: 1
+  },
+  {
+    q: "Which method is considered the best practice for CSS?",
+    opts: ["Inline CSS", "Internal CSS", "External CSS", "Embedded CSS"],
+    ans: 2
+  },
+  {
+    q: "Which selector targets all <h1> elements?",
+    opts: ["#h1", ".h1", "h1", "*h1"],
+    ans: 2
+  },
+  {
+    q: "Which symbol is used for Class Selector?",
+    opts: ["#", ".", "*", "@"],
+    ans: 1
+  },
+  {
+    q: "Which symbol is used for ID Selector?",
+    opts: [".", "*", "#", "%"],
+    ans: 2
+  },
+  {
+    q: "Which CSS property changes text color?",
+    opts: ["background-color", "font-color", "color", "text-color"],
+    ans: 2
+  },
+  {
+    q: "Which property changes the background color?",
+    opts: ["color", "bg-color", "background-color", "background"],
+    ans: 2
+  },
+  {
+    q: "Which property aligns text to the center?",
+    opts: ["align", "text-position", "text-align", "center"],
+    ans: 2
+  },
+  {
+    q: "Which property changes text size?",
+    opts: ["font-style", "text-size", "font-size", "size"],
+    ans: 2
+  },
+  {
+    q: "Which CSS property sets the width of an element?",
+    opts: ["size", "width", "height", "dimension"],
+    ans: 1
+  },
+  {
+    q: "Which CSS property sets the height of an element?",
+    opts: ["width", "size", "length", "height"],
+    ans: 3
+  },
+  {
+    q: "Which property creates rounded corners?",
+    opts: ["corner-radius", "border-round", "border-radius", "radius"],
+    ans: 2
+  },
+  {
+    q: "Which border style creates dotted borders?",
+    opts: [
+      "border:2px solid black;",
+      "border:2px dotted black;",
+      "border:2px double black;",
+      "border:2px dashed black;"
     ], ans: 1
   },
   {
-    q: "What is the difference between <i> and <em>?",
-    opts: [
-      "<i> makes text italic visually; <em> also italicises but adds emphasis/meaning",
-      "<em> is a CSS tag; <i> is an HTML tag",
-      "<em> makes text bigger; <i> makes text italic",
-      "There is no difference"
-    ], ans: 0
-  },
-  {
-    q: "Which tag inserts a LINE BREAK — moving content to the next line?",
-    opts: ["<hr>", "<p>", "<break>", "<br>"],
-    ans: 3
-  },
-  {
-    q: "The <br> tag is called a _______ tag because it does not need a closing tag.",
-    opts: ["Block", "Inline", "Self-closing / void", "Semantic"],
-    ans: 2
-  },
-  {
-    q: "Which tag draws a HORIZONTAL LINE across the page?",
-    opts: ["<br>", "<hr>", "<hl>", "<line>"],
+    q: "Which part of the Box Model is the space inside the border?",
+    opts: ["Margin", "Padding", "Border", "Width"],
     ans: 1
   },
   {
-    q: "What is the purpose of the <hr> tag?",
-    opts: [
-      "Creates a hyperlink",
-      "Inserts a line break",
-      "Draws a thematic / horizontal divider line",
-      "Makes text bold"
-    ], ans: 2
-  },
-
-  // ══════════════════════════════════════
-  //  LISTS  (Q28 – Q35)
-  // ══════════════════════════════════════
-  {
-    topic: "📋  HTML Lists",
-    q: "Which tag creates an UNORDERED (bulleted) list?",
-    opts: ["<ol>", "<dl>", "<ul>", "<li>"],
-    ans: 2
-  },
-  {
-    q: "Which tag creates an ORDERED (numbered) list?",
-    opts: ["<ul>", "<ol>", "<dl>", "<list>"],
-    ans: 1
-  },
-  {
-    q: "Which tag is used for EACH ITEM inside an ordered or unordered list?",
-    opts: ["<item>", "<point>", "<dt>", "<li>"],
-    ans: 3
-  },
-  {
-    q: "Which tag creates a DESCRIPTION LIST?",
-    opts: ["<ul>", "<ol>", "<dl>", "<list>"],
-    ans: 2
-  },
-  {
-    q: "In a description list, which tag is used to write the TERM (the word being described)?",
-    opts: ["<li>", "<dd>", "<dt>", "<term>"],
-    ans: 2
-  },
-  {
-    q: "In a description list, which tag is used to write the DESCRIPTION (definition of the term)?",
-    opts: ["<li>", "<dt>", "<desc>", "<dd>"],
-    ans: 3
-  },
-  {
-    q: "A LIST INSIDE ANOTHER LIST is called a:",
-    opts: ["Double list", "Sub-list", "Nested list", "Inner list"],
-    ans: 2
-  },
-  {
-    q: "How many types of lists are there in HTML?",
-    opts: ["2", "3", "4", "5"],
-    ans: 2
+    q: "Which part of the Box Model is the space outside the border?",
+    opts: ["Margin", "Padding", "Content", "Height"],
+    ans: 0
   }
 
 ];
-
 function escapeHTML(str) {
   return str
     .replace(/&/g, '&amp;')
@@ -585,10 +506,10 @@ function submitQuiz() {
 
   const pct = (score / total) * 100;
   let msg = '';
-  if (pct >= 90)      msg = '🎉 Excellent! Outstanding performance!';
-  else if (pct >= 70) msg = '👍 Good job! Keep it up!';
-  else if (pct >= 50) msg = '📚 Average. Revise the topics and try again.';
-  else                msg = '⚠️ Needs improvement. Please study again carefully.';
+  if (pct >= 90)      msg = 'Excellent! Outstanding performance!';
+  else if (pct >= 70) msg = 'Good job! Keep it up!';
+  else if (pct >= 50) msg = 'Average. Revise the topics and try again.';
+  else                msg = 'Needs improvement. Please study again carefully.';
   if (unanswered > 0) msg += ` (${unanswered} question${unanswered > 1 ? 's' : ''} unanswered)`;
 
   document.getElementById('result-msg').textContent = msg;

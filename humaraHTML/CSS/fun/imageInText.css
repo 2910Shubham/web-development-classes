@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+}
+
+h1{
+    font-size: 200px;
+    background-image: url("https://thumbs.dreamstime.com/b/indian-flag-waving-proudly-symbol-patriotism-freedom-generated-ai-indian-flag-waving-proudly-symbol-patriotism-279685489.jpg");
+    background-size: contain;
+    background-clip: text;
+    color: transparent;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex box</title>
+    <link rel="stylesheet" href="./flexBox.css">
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box; 
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+            align-items:center;
+            background-color: blanchedalmond;
+        }
+
+        .container{
+            width: 400px;
+           
+            padding: 20px;
+            background-color: azure;
+            border: 2px dashed black;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: bisque;
+            border: 1px solid purple;
+            border-radius: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+      <div class="container">
+         <h1>Student Card</h1>
+         <div class="box">
+            <img  class="box" src="https://tse1.explicit.bing.net/th/id/OIP.kGNZG_veQEqqevEPuQDBxAAAAA?cb=thfc1falcon2&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+         </div>
+
+         <p>Name: Rahul Kumar</p>
+         <p>Course: M.Tech</p>
+      </div>
+</body>
+</html>

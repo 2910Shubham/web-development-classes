@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    height: 50px;
+    width: 100px;
+
+    background-color: olive;
+    transition: 0.5s;
+}
+
+div:hover {
+    background-color: bisque;
+    transform: translate(+10px);
+}

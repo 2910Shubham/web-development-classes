@@ -1,0 +1,5 @@
+class work task
+
+create 3 div in HTML
+and Center them with the helpof the display: fex property and
+justify-content as well as align-itens property

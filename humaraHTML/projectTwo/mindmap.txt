@@ -1,0 +1,36 @@
+Project Name : TechFest
+
+Sections :
+    1. About Section
+    2. Categories (cards(div))
+          i> Web Development
+          ii> UI/UX Design
+          iii> Robotics
+
+    3. Facilities (ul)
+        i> Food
+        ii> Wi-fi
+        iii> Participation Certificate
+        
+    4. Event Schedules (table)
+       
+        Time               Activities
+
+       10:00 A.M       Opening Ceremony
+       11:00 A.M       Coding Competition
+       01:00 P.M       Project Exhibition
+       03:00 P.M       Prize Destribution
+
+        
+     5. Registration Form.
+          
+          1. Name (text)
+          2. Mob. (tel)
+          3. Email (email)
+          4. Participating Categories (dropdown)
+          
+
+
+     6. Footer
+     
+          

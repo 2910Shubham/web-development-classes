@@ -1,0 +1,4 @@
+1.write your name in html and put an image inside it. 
+2. style your page background with linear gradient color
+3. Create a div, give height 20px and width 40px, background color 
+should be "Red" and on hover it should turn into "Blue"
