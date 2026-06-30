@@ -28,6 +28,10 @@ Sections :
           2. Mob. (tel)
           3. Email (email)
           4. Participating Categories (dropdown)
+                    i> Web Development
+                    ii> UI/UX Design
+                iii> Robotics
+
           
 
 

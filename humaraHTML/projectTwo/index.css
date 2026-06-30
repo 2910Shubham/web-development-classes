@@ -1,56 +1,182 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-      background: rgba(0, 0, 0, 0.323);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: monospace;
-    
-    background: url("https://tse1.mm.bing.net/th/id/OIP.bbz2Xdfn7no-t2JRJYOROQHaE7?w=2048&h=1365&rs=1&pid=ImgDetMain&o=7&rm=3");
-    background-repeat: repeat;
-    background-size: contain;
+  font-family: monospace;
+
+  background: url("https://png.pngtree.com/thumb_back/fh260/background/20201009/pngtree-science-or-technology-background-with-dynamic-particles-trendy-colorful-design-template-image_406781.jpg");
+  background-repeat: repeat;
+  background-size: contain;
 }
 
-
-
 header {
-
-    width: 100%;
-    text-align: center;
-    padding: 40px;
-    color: white;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 250px;
+  margin-top: 150px;
+  width: 100%;
+  padding: 40px;
+  color: white;
 }
 
 .poster {
-    height: 100px;
-    width: 100%;
-   
-     background: linear-gradient(rgba(0,0,0,0.6)),url("https://fs-courses.com/images/banners/banner-techfest-2022-v2.png");
-    background-size: contain;
-    background-repeat: repeat-x;
+  height: 100px;
+  width: 100%;
 
-
+  /* background: linear-gradient(rgba(0,0,0,0.6)),url("https://fs-courses.com/images/banners/banner-techfest-2022-v2.png"); */
+  background-size: contain;
+  background-repeat: repeat-x;
 }
 
 header h1 {
-    font-size: 60px;
-    margin-bottom: 10px;
-    font-weight: 900;
-  
+  font-size: 100px;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+header p {
+  font-size: 30px;
+}
+header img {
+  margin-top: 100px;
+  font-size: 30px;
+  height: 90px;
+  width: 70px;
 }
 
 section {
-    padding: 30px;
-    color: white;
+  padding: 30px;
+  color: white;
+  background-color: transparent;
+}
+
+section h2 {
+  text-align: center;
 }
 
 .about {
-    text-align: center;
-    color: white
-      
+  text-align: center;
+  color: white;
+  background-color: transparent;
+
+  margin-bottom: 100px;
+}
+
+.about img {
+  height: 250px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 70px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.events h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  /* text-align: center; // no */
+  display: flex;
+  justify-content: center;
+
+  gap: 40px;
+
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  padding: 18px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: cornflowerblue;
+  transition: 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(45deg, #ff9966, #ff5e62);
+
+  color: white;
+}
+
+.list {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+ul {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  list-style: disc;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  text-align: center;
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgb(207, 12, 12);
+}
+
+th {
+  background: cornflowerblue;
+  color: white;
+}
+
+form {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+  
 }
 
 
+form label {
+    font-size: 22px;
+}
+
+input, select {
+    width: 500px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 10px;
+}
