@@ -39,6 +39,17 @@ ul {
     transition: 0.5s;
 }
 
+.active {
+     background: linear-gradient(
+       70deg, #ff0378,#f5b431
+        
+    );
+
+    
+    -webkit-background-clip: text;
+    color: transparent
+}
+
 ul li a:hover {
     background: linear-gradient(
        70deg, #ff0378,#f5b431
@@ -49,13 +60,14 @@ ul li a:hover {
     color: transparent
 }
 
-nav button{
+nav button a{
     background-color: #f5b431;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: medium;
+    text-decoration: none;
 }
 
 nav button:hover {
