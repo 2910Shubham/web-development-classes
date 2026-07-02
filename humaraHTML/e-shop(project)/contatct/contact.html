@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+     <nav>
+      <img class="logo" src="../logo.png" alt="logo" />
+
+      <ul>
+        <li><a  href="../index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a  href="../product/product.html">Product</a></li>
+        <li><a class="active" href="#">Contact</a></li>
+      </ul>
+      <button><a href="../auth/login.html">Login</a></button>
+    </nav>
+
+    <div class="container">
+
+        <section class="header">
+            <h1>Contact Us</h1>
+            <p>Fill this form to contact with us and we will get back to you soon</p>
+        </section>
+          <div class="form-box">
+
+            <form action="">
+
+                <input type="text" placeholder="First Name" name="fname">
+                <input type="text" placeholder="Last Name" name="lname">
+                <input type="email" placeholder="example@gmail.com" name="email">
+                <input type="password" placeholder="Password" name="password">
+                <input type="password" placeholder=" Confirm Password" name="cpassword">
+                <input type="tel" placeholder="Contact Number" name="contact">
+                <input type="date" placeholder="Date of Birth" name="dob">
+                <input type="time" placeholder="Time of Birth" name="tob">
+                <input type="number" placeholder="Age" name="age">
+                <input type="url" placeholder="enter your social media (if any)" name="social">
+                <select name="country" id="">
+                    <option value="india">India</option>
+                    <option value="nepal">Nepal</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="russia">Russia</option>
+                </select>
+
+                <div class="radio-group">
+                     <label class="male" for=""><input  type="radio" name="gender">Male</label>
+                     <label class="female" for=""><input  type="radio" name="gender">Female</label>
+                </div>
+
+                <textarea name="msg" id="" placeholder="Write you comments here..." rows="5"></textarea>
+
+                <input type="file" placeholder="Upload you Image" name="upload">
+
+                <input type="color" placeholder="select color" name="color">
+
+                <input type="range" placeholder="price range" name="range">
+
+                <input type="submit">
+            </form>
+
+
+          </div>
+
+
+
+    </div>
+
+    
+</body>
+</html>

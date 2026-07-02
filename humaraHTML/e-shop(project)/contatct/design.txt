@@ -1,0 +1,23 @@
+inputs.
+
+total 16 inputs
+
+
+     Input         Type of input
+
+ 1   First Name      Text
+ 2   Last Name       Text
+ 3   Email           Email
+ 4   Password        Password
+ 5   Phone No.       Tel
+ 6   Date            Date
+ 7   Number          Number
+ 8   website         URL
+ 9   Country         Dropdown
+ 10   Preferences     Radio Type
+ 11   ...             Checkbox
+12    message         Text area
+13    image           fileUpload
+14    color           color picker
+15    price range     range
+16    time            time
