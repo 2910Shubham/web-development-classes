@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development — Day 1 | HTML BATCH 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f0e17;
+      --accent-pink: #ff6b9d;
+      --accent-yellow: #ffd93d;
+      --accent-cyan: #6bcbff;
+      --accent-green: #6bffb8;
+      --accent-purple: #a78bfa;
+      --text-light: #fffffe;
+      --text-muted: #a7a9be;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      overflow: hidden;
+      height: 100vh;
+      padding: 2.5rem 3.5rem;
+    }
+
+    /* Floating background shapes */
+    .bg-shapes {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      animation: float 12s ease-in-out infinite;
+    }
+
+    .shape-1 { width: 400px; height: 400px; background: var(--accent-pink); top: -100px; left: -100px; }
+    .shape-2 { width: 350px; height: 350px; background: var(--accent-cyan); bottom: -80px; right: -80px; animation-delay: -4s; }
+    .shape-3 { width: 300px; height: 300px; background: var(--accent-yellow); top: 50%; left: 50%; animation-delay: -8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* Slide container */
+    .presentation {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1100px;
+      height: 100%;
+      padding: 1.5rem 2rem;
+      animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .slide.active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .slide.title-slide.active,
+    .slide.center-slide.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      grid-template-columns: unset;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .slide-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-yellow), var(--accent-pink), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .content p,
+    .content li {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .content li::before {
+      content: "✨ ";
+    }
+
+    .content strong {
+      color: var(--accent-yellow);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 1rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .highlight-box.pink { border-color: var(--accent-pink); }
+    .highlight-box.cyan { border-color: var(--accent-cyan); }
+    .highlight-box.green { border-color: var(--accent-green); }
+    .highlight-box.yellow { border-color: var(--accent-yellow); }
+
+    /* Images */
+    .image-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-wrap img {
+      max-width: 100%;
+      max-height: 55vh;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--card-border);
+      object-fit: cover;
+      animation: imgPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+    }
+
+    .image-wrap.round img {
+      border-radius: 50%;
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    @keyframes imgPop {
+      from { opacity: 0; transform: scale(0.8) rotate(-3deg); }
+      to { opacity: 1; transform: scale(1) rotate(0); }
+    }
+
+    /* Comparison table */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .compare-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 1.2rem;
+      border: 2px solid var(--card-border);
+      text-align: center;
+    }
+
+    .compare-card h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .compare-card.internet h3 { color: var(--accent-cyan); }
+    .compare-card.web h3 { color: var(--accent-pink); }
+    .compare-card.browser h3 { color: var(--accent-green); }
+    .compare-card.search h3 { color: var(--accent-yellow); }
+
+    .compare-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .vs-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0.8rem 0;
+    }
+
+    /* Tech stack icons row */
+    .tech-row {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .tech-item {
+      text-align: center;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .tech-item:nth-child(2) { animation-delay: 0.3s; }
+    .tech-item:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .tech-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    .tech-item span {
+      display: block;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* Emoji decorations */
+    .emoji-deco {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: wiggle 2s ease-in-out infinite;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      75% { transform: rotate(10deg); }
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+      color: var(--bg-dark);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Full-width comparison slide */
+    .slide.full-compare.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide.full-compare .compare-grid {
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+    }
+
+    .slide.full-compare .compare-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .slide {
+        padding: 1rem 0.75rem;
+      }
+
+      .slide.active {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+        gap: 1.5rem;
+      }
+
+      .image-wrap img {
+        max-height: 30vh;
+      }
+
+      .slide.full-compare .compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="presentation">
+
+    <!-- SLIDE 1: Title -->
+    <section class="slide title-slide active" data-slide="1">
+     
+      <span class="badge">HTML BATCH 3 — Day 1</span>
+      <h1>Welcome to <span class="gradient-text">Web Development!</span></h1>
+      <p class="subtitle">Your journey to building amazing things on the Internet starts today. Let's explore the Web together! 🌐</p>
+      <div class="image-wrap" style="margin-top: 2rem;">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" alt="Coding on a laptop">
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Why Learn Web Development -->
+    <section class="slide" data-slide="2">
+      <div class="content">
+        <h2>Why Learn <span class="gradient-text">Web Development?</span> 🤔</h2>
+        <ul>
+          <li>The Web powers <strong>billions of websites & apps</strong> we use daily</li>
+          <li>High demand for web developers worldwide 💼</li>
+          <li>Build your own portfolio, blog, or startup 🎯</li>
+          <li>Express your creativity through code 🎨</li>
+          <li>Work from anywhere — all you need is a laptop! 💻</li>
+        </ul>
+        <div class="highlight-box pink">
+          <p><strong>Fun Fact:</strong> Over 5 billion people use the Internet today!</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop" alt="Team collaborating on web project">
+      </div>
+    </section>
+
+    <!-- SLIDE 3: What Can You Build -->
+    <section class="slide center-slide" data-slide="3">
+      <h2>What Can <span class="gradient-text">You Build?</span> 🛠️</h2>
+      <p class="subtitle">With just three languages, you can create almost anything on the Web!</p>
+      <div class="tech-row">
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+          <span>HTML</span>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Structure</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+          <span>CSS</span>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Design</p>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          <span>JavaScript</span>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Interactivity</p>
+        </div>
+      </div>
+      <div class="highlight-box cyan" style="max-width: 700px; margin-top: 1.5rem;">
+        <p>Websites • Portfolios • Games • E-commerce • Social Media • Dashboards • And much more! 🎉</p>
+      </div>
+      <!-- <div class="image-wrap" style="margin-top: 1.5rem;">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&h=300&fit=crop" alt="Code on screen" style="max-height: 25vh;">
+      </div> -->
+    </section>
+
+    <!-- SLIDE 4: Necessity -->
+    <section class="slide" data-slide="4">
+      <div class="content">
+        <h2>Not a Choice — <span class="gradient-text">It's a Necessity!</span> ⚡</h2>
+        <p>In this fast-evolving digital world, knowing HTML & CSS is <strong>essential</strong> — not optional!</p>
+        <ul>
+          <li>Every business needs a website 🏢</li>
+          <li>Digital skills are the new literacy 📖</li>
+          <li>Technology changes fast — start learning NOW 🏃</li>
+          <li>Even non-developers benefit from web basics 🧠</li>
+        </ul>
+        <div class="highlight-box yellow">
+          <p>💡 <strong>Remember:</strong> "The best time to learn web development was yesterday. The second best time is TODAY!"</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=450&fit=crop" alt="Person learning on laptop">
+      </div>
+    </section>
+
+    <!-- SLIDE 5: What is Internet -->
+    <section class="slide" data-slide="5">
+      <div class="content">
+        <h2>What is the <span class="gradient-text">Internet?</span> 🌍</h2>
+        <p>The Internet is a <strong>global network of connected computers</strong> that communicate with each other.</p>
+        <ul>
+          <li>Think of it as millions of roads connecting cities 🛣️</li>
+          <li>Uses cables, satellites & wireless signals 📡</li>
+          <li>Enables email, video calls, file sharing & more</li>
+          <li>Existed <strong>before</strong> the World Wide Web</li>
+        </ul>
+        <div class="highlight-box cyan">
+          <p><strong>Analogy:</strong> Internet = the highway system 🚗</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Z6xx7rP7irPSOfZyEt_I31Zh0hTR3hq7U3P3-6BrtHzzhDoOOH9ABt4&s=10" alt="Global Internet network map">
+      </div>
+    </section>
+
+    <!-- SLIDE 6: What is Web -->
+    <section class="slide" data-slide="6">
+      <div class="content">
+        <h2>What is the <span class="gradient-text">Web?</span> 🕸️</h2>
+        <p>The Web (World Wide Web) is a <strong>collection of websites and web pages</strong> accessible via the Internet.</p>
+        <ul>
+          <li>Uses browsers like Chrome, Firefox, Edge 🌐</li>
+          <li>Built with HTML, CSS & JavaScript</li>
+          <li>Connected through <strong><a href="https://www.google.com/">hyperlinks</a></strong> (clickable links)</li>
+          <li>One of many services that run ON the Internet</li>
+        </ul>
+        <div class="highlight-box pink">
+          <p><strong>Analogy:</strong> Web = the shops & buildings along the highway 🏪</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://www.w3.org/People/Frystyk/thesis/WWW.gif" alt="World Wide Web concept">
+      </div>
+    </section>
+
+    <!-- SLIDE 7: What is WWW -->
+    <section class="slide" data-slide="7">
+      <div class="content">
+        <h2>What is <span class="gradient-text">WWW?</span> 🔗</h2>
+        <p><strong>WWW</strong> stands for <strong>World Wide Web</strong> — invented in 1989 at CERN.</p>
+        <ul>
+          <li>A system of interlinked <strong>hypertext documents</strong></li>
+          <li>Accessed via <strong>URLs</strong> (web addresses)</li>
+          <li>Uses the <strong>HTTP</strong> protocol to transfer data</li>
+          <li>The "www" you see in URLs refers to this system</li>
+        </ul>
+        <div class="highlight-box green">
+          <p>🌐 <strong>www.example.com</strong> — the "www" is a subdomain pointing to the web server!</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShjjx30HoeBwu6g8WWxadmlA6T34N7Y4DwuA1vKdbGyrmUXBqkt9C96Oeo&s=10" alt="WWW diagram">
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Founder of WWW -->
+    <section class="slide" data-slide="8">
+      <div class="content">
+        <h2>Founder of the <span class="gradient-text">WWW</span> 👨‍💻</h2>
+        <p><strong>Sir Tim Berners-Lee</strong> invented the World Wide Web in 1989 while working at CERN, Switzerland.</p>
+        <ul>
+          <li>Created the first web browser & server</li>
+          <li>Designed <strong>HTML, HTTP & URLs</strong></li>
+          <li>Made the Web <strong>free for everyone</strong> 🎁</li>
+          <li>Founded the W3C to develop web standards</li>
+        </ul>
+        <div class="highlight-box yellow">
+          <p>🏆 He received the Turing Award in 2016 — the "Nobel Prize of Computing"</p>
+        </div>
+      </div>
+      <div class="image-wrap round">
+        <img src="https://entrepreneurship.mit.edu/wp-content/uploads/Tim-Berners-Lee-640-1.jpg" alt="Sir Tim Berners-Lee">
+      </div>
+    </section>
+
+    <!-- SLIDE 9: What is HTML -->
+    <section class="slide" data-slide="9">
+      <div class="content">
+        <h2>What is <span class="gradient-text">HTML?</span> 📄</h2>
+        <p><strong>HTML</strong> = <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</p>
+        <ul>
+          <li>The <strong>skeleton</strong> of every web page 🦴</li>
+          <li>Uses <strong>tags</strong> like &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;</li>
+          <li>Defines headings, paragraphs, images, links</li>
+          <li>NOT a programming language — it's a markup language!</li>
+        </ul>
+        <div class="highlight-box pink">
+          <p>🏠 <strong>Analogy:</strong> HTML is like the walls, doors & rooms of a house</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdT8zIw-Ki0ZJu8QgJBjJKdhYams1tRxxHQL42uIRVlg&s=10" alt="HTML5 Logo">
+      </div>
+    </section>
+
+    <!-- SLIDE 10: What is HTTP -->
+    <section class="slide" data-slide="10">
+      <div class="content">
+        <h2>What is <span class="gradient-text">HTTP?</span> 📨</h2>
+        <p><strong>HTTP</strong> = <strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol</p>
+        <ul>
+          <li>The <strong>language</strong> browsers & servers use to talk 🗣️</li>
+          <li>When you visit a URL, browser sends an <strong>HTTP Request</strong></li>
+          <li>Server responds with an <strong>HTTP Response</strong> (the webpage!)</li>
+          <li><strong>HTTPS</strong> = secure version (with encryption 🔒)</li>
+        </ul>
+        <div class="highlight-box cyan">
+          <p>📬 <strong>Analogy:</strong> HTTP is like the postal service delivering your mail!</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240529150129/HTTP-.gif" alt="HTTP protocol diagram">
+      </div>
+    </section>
+
+    <!-- SLIDE 11: Internet vs Web -->
+    <section class="slide full-compare center-slide" data-slide="11">
+      <h2>Internet <span class="vs-badge">VS</span> Web 🆚</h2>
+      <div class="compare-grid">
+        <div class="compare-card internet">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Internet">
+          <h3>🌍 Internet</h3>
+          <p>The physical network infrastructure — cables, routers, servers connecting computers worldwide</p>
+        </div>
+        <div class="vs-badge" style="font-size: 1.5rem;">≠</div>
+        <div class="compare-card web">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Web">
+          <h3>🕸️ Web</h3>
+          <p>A service that runs ON the Internet — websites, pages, and apps you browse daily</p>
+        </div>
+      </div>
+      <div class="highlight-box green" style="max-width: 700px; margin-top: 1.5rem;">
+        <p>💡 Email, online gaming & video streaming use the Internet but are NOT the Web!</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: What is Browser -->
+    <section class="slide" data-slide="12">
+      <div class="content">
+        <h2>What is a <span class="gradient-text">Browser?</span> 🖥️</h2>
+        <p>A <strong>web browser</strong> is software that displays web pages.</p>
+        <ul>
+          <li><strong>Chrome</strong> — by Google 🔵</li>
+          <li><strong>Firefox</strong> — by Mozilla 🦊</li>
+          <li><strong>Edge</strong> — by Microsoft 🔷</li>
+          <li><strong>Safari</strong> — by Apple 🍎</li>
+        </ul>
+        <div class="highlight-box green">
+          <p>🪟 <strong>Analogy:</strong> Browser = the window you look through to see websites</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQor1Qh__x6-RmK3fIIHlumJp71PuLgffKKVW8qjLPpOdMhbufMX4DVcSu&s=10" alt="Browser icon" style="max-height: 40vh;">
+      </div>
+    </section>
+
+    <!-- SLIDE 13: What is Search Engine -->
+    <section class="slide" data-slide="13">
+      <div class="content">
+        <h2>What is a <span class="gradient-text">Search Engine?</span> 🔍</h2>
+        <p>A <strong>search engine</strong> is a website that helps you <strong>find information</strong> on the Web.</p>
+        <ul>
+          <li><strong>Google</strong> — most popular worldwide</li>
+          <li><strong>Bing</strong> — by Microsoft</li>
+          <li><strong>DuckDuckGo</strong> — privacy-focused</li>
+          <li>Crawls billions of web pages & ranks results</li>
+        </ul>
+        <div class="highlight-box yellow">
+          <p>📚 <strong>Analogy:</strong> Search Engine = a librarian who finds books for you!</p>
+        </div>
+      </div>
+      <div class="image-wrap">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240110183913/how-search-engine-works.jpeg" alt="Google Search Engine">
+      </div>
+    </section>
+
+    <!-- SLIDE 14: Browser vs Search Engine -->
+    <section class="slide full-compare center-slide" data-slide="14">
+      <h2>Browser <span class="vs-badge">VS</span> Search Engine 🆚</h2>
+      <div class="compare-grid">
+        <div class="compare-card browser">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Browser">
+          <h3>🖥️ Browser</h3>
+          <p><strong>Software</strong> installed on your computer. Displays ANY website — YouTube, Facebook, Google, etc.</p>
+        </div>
+        <div class="vs-badge" style="font-size: 1.5rem;">≠</div>
+        <div class="compare-card search">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/240px-Google_%22G%22_logo.svg.png" alt="Search Engine">
+          <h3>🔍 Search Engine</h3>
+          <p>A <strong>website</strong> you visit INSIDE a browser. Helps you search & find other websites.</p>
+        </div>
+      </div>
+      <div class="highlight-box pink" style="max-width: 700px; margin-top: 1.5rem;">
+        <p>🧠 <strong>Key Point:</strong> You use a Browser to OPEN a Search Engine. Chrome is NOT Google — Chrome is the browser, Google is a website!</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 15: Let's Begin -->
+    <section class="slide title-slide" data-slide="15">
+      <div class="emoji-deco">🎉</div>
+      <h1>Ready to <span class="gradient-text">Build the Web?</span></h1>
+      <p class="subtitle">You now know the foundations! Next up — we'll write our first lines of HTML & CSS. Let's code! 💻✨</p>
+      <div class="tech-row" style="margin-top: 1.5rem;">
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+          <span>HTML</span>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+          <span>CSS</span>
+        </div>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+          <span>JS</span>
+        </div>
+      </div>
+      <div class="highlight-box green" style="max-width: 500px; margin-top: 2rem;">
+        <p style="text-align: center; font-size: 1.2rem;"><strong>HTML BATCH 3 — Let's Go! 🚀</strong></p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    function updateSlide() {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+  </script>
+
+</body>
+</html>
