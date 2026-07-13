@@ -1,0 +1,41 @@
+ 
+ Tags....
+
+ H1 Tag (done)
+ p Tag (done)
+ b -> fomate your text into Bold  (done)
+ i (done)
+ u (done)
+ 
+ strong Tag --> formate your text into Bold with sementicity (done)
+ em Tag (done)
+ br (done)  self closing
+ hr (done)  self closing
+
+ Resume Project
+
+
+Rahul Htmlwala
+___________________________________________________
+Mob: 9876543210, email: htmlwala@html.com, portfolio
+____________________________________________________
+
+About:
+
+
+__________________________________________________
+
+Technical Skills
+
+HTML
+CSS
+JS
+web Development
+
+__________________________________________________
+
+Education:
+
+B.Tech 
+
+IIT Bombay    8.9 CGPA

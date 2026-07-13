@@ -1,0 +1,60 @@
+HTML Lists
+-------------
+
+1> Why Lists are used..? (done)
+2> Create Ordered lists, Unordered lists, and Description List. (done)
+3> Combine diffrent type of lists. (done)
+4> Build a simple mini project using lists.(done)
+
+
+New Tags we will learn
+-----------------------
+
+ul Tag ---> 
+ol Tag
+li Tag
+dl Tag
+dt Tag
+dd Tag
+
+Attributes we will learn
+--------------------------
+
+Type Attributes 
+
+What is List..?
+
+--> List ek tarika hai data ko sysematic way me represent krne ka.
+
+
+Stundet Ranking  List                       Sabji lane ki List
+(Ordered List)                              (Unordered List)
+2. Radha                                     Pyaj
+1. Rahul                                     Aaloo
+3. Rani                                      Adarak
+4. Rajiv                                     Karela
+5. Rohit                                     Palak
+
+
+
+Shadi me Khane ki lists
+-------------------------
+(Description list)
+
+1. Starter items
+       i> Paneera Pakrora
+      ii> French Fries
+     iii> Baby Corn 
+
+2. Main Course
+       i> Shahi Paneer
+      ii> Pulao 
+     iii> Daal
+
+3. Deserts
+       ....
+       .......
+
+ 4. Beaverages
+    .......
+    .......

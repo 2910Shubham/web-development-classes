@@ -1,0 +1,41 @@
+Text formating
+--------------
+
+mark tag  ---> Highlight (done)
+samll tag --> small text (done)
+
+sub tag --->  Subscript (done)
+sup tag ----> superscript (done)
+
+
+strike tag ---> strik
+
+code tag --->  monospace font
+
+
+---------------------------
+
+Link & Navigation
+____________________________
+
+a tag ----> anchor tag and used for hyperlinking
+
+
+--------------------------------------------
+
+Image and Multimedia Tags
+__________________________________________________
+
+img tag ----> Image
+
+audio tag ----> for audio
+video tag  ------> for video
+
+svg tag ------> for vector
+
+
+
+ a project using them
+
+
+
