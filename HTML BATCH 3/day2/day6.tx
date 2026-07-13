@@ -1,0 +1,63 @@
+    HTML Tables
+ ------------------
+
+1. Basic Structure of table
+2. How to create a table
+3. Table border
+
+4. Tags we will learn today
+-------------------------
+
+Tags             Purpose
+-----------------------------
+<table>   |    Create a Table
+<tr>      |    Create row
+<th>      |    Header Cell
+<td>      |    Data Cell
+
+
+5. Attributes we will learn today
+----------------------------------
+colspan=""
+rowspan="" 
+
+CSS property.
+
+
+
+
+6. Mini Project
+
+
+Student Profile (on top)
+
+Name 
+Course
+college
+
+Skill (ul)
+
+HTML
+CSS
+JS
+C
+
+Daily Routine (ol)
+
+wake up
+brush teeth
+take tea
+take bath
+have breakfast
+
+Assesment (dl)
+
+
+
+table (Course detail)
+
+Subjects        Faculty         Duration (in hr)    Timing
+
+HTML CSS        Shubham          1.5 - 2             8:00 PM - 10:00 PM
+Javascript      Badal            1.5 - 2             6:00 PM - 8:00 PM
+
