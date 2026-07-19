@@ -1,0 +1,25 @@
+Humara Table
+------------------
+
+-------------------------------
+      Student Information
+-------------------------------
+        |     Roll: 03
+        |-------------------
+Rashid  |   Marks: 200
+        |------------------
+        |  Percentage: 80%  
+
+
+
+new Tags we will learn for form
+------------------------------
+
+<form>
+<input>
+
+used Attributes
+-----------------
+
+type=""
+name=""

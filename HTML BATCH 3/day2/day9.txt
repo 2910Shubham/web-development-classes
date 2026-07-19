@@ -1,0 +1,52 @@
+    Today we are starting CSS
+    -------------------------
+
+1> What does CSS Stands for..?
+--> Cascading Stylesheet
+
+2> Uses of CSS ??
+--> To change COLOR
+--> To change FONT
+--> for FOTMATING
+--> To add borders
+--> To Add Responsiveness
+--> Basic Animation....etc
+
+
+3> Types of CSS :
+
+1. Inline CSS
+
+in this we use Style Attribute (style="")
+>>this has the highest priority for changes
+
+uses of Inline CSS:
+
+>> To write CSS for any perticular line or tag of HTML.
+>> For Testing purpose
+
+Recommendation:
+
+It is not Recommended for large projects.
+
+
+2> Internal CSS
+
+we use Style Tag to write CSS for any perticular HTML page
+this has the least priority for changes
+uses:
+
+>> when writin css for any perticular web page
+
+Recommendation:
+
+It is only usedul for Small websites
+
+3> External CSS
+
+a file created with .css ([DOT]css) extention, and we write css inside that file
+
+
+
+
+

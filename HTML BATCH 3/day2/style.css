@@ -1,0 +1,31 @@
+/* Syntax */
+
+/* selector {
+  property: value;
+} */
+
+
+/* (with tag name) */
+
+body {
+    color:brown
+}
+
+/* universal selector */
+
+* {
+    color: aliceblue;
+}
+
+/*  ID selector*/
+
+#box {
+
+}
+
+/* with class */
+
+.container {
+    
+}
+
