@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Development — Day 1 | HTML BATCH 3</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0f0e17;
@@ -53,14 +56,46 @@
       animation: float 12s ease-in-out infinite;
     }
 
-    .shape-1 { width: 400px; height: 400px; background: var(--accent-pink); top: -100px; left: -100px; }
-    .shape-2 { width: 350px; height: 350px; background: var(--accent-cyan); bottom: -80px; right: -80px; animation-delay: -4s; }
-    .shape-3 { width: 300px; height: 300px; background: var(--accent-yellow); top: 50%; left: 50%; animation-delay: -8s; }
+    .shape-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent-pink);
+      top: -100px;
+      left: -100px;
+    }
+
+    .shape-2 {
+      width: 350px;
+      height: 350px;
+      background: var(--accent-cyan);
+      bottom: -80px;
+      right: -80px;
+      animation-delay: -4s;
+    }
+
+    .shape-3 {
+      width: 300px;
+      height: 300px;
+      background: var(--accent-yellow);
+      top: 50%;
+      left: 50%;
+      animation-delay: -8s;
+    }
 
     @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -30px) scale(1.05); }
-      66% { transform: translate(-20px, 20px) scale(0.95); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(30px, -30px) scale(1.05);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) scale(0.95);
+      }
     }
 
     /* Slide container */
@@ -100,8 +135,15 @@
     }
 
     @keyframes slideIn {
-      from { opacity: 0; transform: translateY(30px) scale(0.97); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* Typography */
@@ -176,10 +218,21 @@
       backdrop-filter: blur(10px);
     }
 
-    .highlight-box.pink { border-color: var(--accent-pink); }
-    .highlight-box.cyan { border-color: var(--accent-cyan); }
-    .highlight-box.green { border-color: var(--accent-green); }
-    .highlight-box.yellow { border-color: var(--accent-yellow); }
+    .highlight-box.pink {
+      border-color: var(--accent-pink);
+    }
+
+    .highlight-box.cyan {
+      border-color: var(--accent-cyan);
+    }
+
+    .highlight-box.green {
+      border-color: var(--accent-green);
+    }
+
+    .highlight-box.yellow {
+      border-color: var(--accent-yellow);
+    }
 
     /* Images */
     .image-wrap {
@@ -206,8 +259,15 @@
     }
 
     @keyframes imgPop {
-      from { opacity: 0; transform: scale(0.8) rotate(-3deg); }
-      to { opacity: 1; transform: scale(1) rotate(0); }
+      from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-3deg);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+      }
     }
 
     /* Comparison table */
@@ -232,10 +292,21 @@
       margin-bottom: 0.5rem;
     }
 
-    .compare-card.internet h3 { color: var(--accent-cyan); }
-    .compare-card.web h3 { color: var(--accent-pink); }
-    .compare-card.browser h3 { color: var(--accent-green); }
-    .compare-card.search h3 { color: var(--accent-yellow); }
+    .compare-card.internet h3 {
+      color: var(--accent-cyan);
+    }
+
+    .compare-card.web h3 {
+      color: var(--accent-pink);
+    }
+
+    .compare-card.browser h3 {
+      color: var(--accent-green);
+    }
+
+    .compare-card.search h3 {
+      color: var(--accent-yellow);
+    }
 
     .compare-card p {
       font-size: 0.95rem;
@@ -268,12 +339,24 @@
       animation: bounce 2s ease-in-out infinite;
     }
 
-    .tech-item:nth-child(2) { animation-delay: 0.3s; }
-    .tech-item:nth-child(3) { animation-delay: 0.6s; }
+    .tech-item:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .tech-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     .tech-item img {
@@ -298,9 +381,19 @@
     }
 
     @keyframes wiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-10deg); }
-      75% { transform: rotate(10deg); }
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-10deg);
+      }
+
+      75% {
+        transform: rotate(10deg);
+      }
     }
 
     /* Badge */
@@ -363,6 +456,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="bg-shapes">
@@ -375,12 +469,14 @@
 
     <!-- SLIDE 1: Title -->
     <section class="slide title-slide active" data-slide="1">
-     
+
       <span class="badge">HTML BATCH 3 — Day 1</span>
       <h1>Welcome to <span class="gradient-text">Web Development!</span></h1>
-      <p class="subtitle">Your journey to building amazing things on the Internet starts today. Let's explore the Web together! 🌐</p>
+      <p class="subtitle">Your journey to building amazing things on the Internet starts today. Let's explore the Web
+        together! 🌐</p>
       <div class="image-wrap" style="margin-top: 2rem;">
-        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop" alt="Coding on a laptop">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
+          alt="Coding on a laptop">
       </div>
     </section>
 
@@ -400,7 +496,8 @@
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop" alt="Team collaborating on web project">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop"
+          alt="Team collaborating on web project">
       </div>
     </section>
 
@@ -420,7 +517,8 @@
           <p style="font-size: 0.85rem; color: var(--text-muted);">Design</p>
         </div>
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript">
           <span>JavaScript</span>
           <p style="font-size: 0.85rem; color: var(--text-muted);">Interactivity</p>
         </div>
@@ -445,11 +543,13 @@
           <li>Even non-developers benefit from web basics 🧠</li>
         </ul>
         <div class="highlight-box yellow">
-          <p>💡 <strong>Remember:</strong> "The best time to learn web development was yesterday. The second best time is TODAY!"</p>
+          <p>💡 <strong>Remember:</strong> "The best time to learn web development was yesterday. The second best time
+            is TODAY!"</p>
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=450&fit=crop" alt="Person learning on laptop">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=450&fit=crop"
+          alt="Person learning on laptop">
       </div>
     </section>
 
@@ -457,7 +557,8 @@
     <section class="slide" data-slide="5">
       <div class="content">
         <h2>What is the <span class="gradient-text">Internet?</span> 🌍</h2>
-        <p>The Internet is a <strong>global network of connected computers</strong> that communicate with each other.</p>
+        <p>The Internet is a <strong>global network of connected computers</strong> that communicate with each other.
+        </p>
         <ul>
           <li>Think of it as millions of roads connecting cities 🛣️</li>
           <li>Uses cables, satellites & wireless signals 📡</li>
@@ -469,7 +570,9 @@
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Z6xx7rP7irPSOfZyEt_I31Zh0hTR3hq7U3P3-6BrtHzzhDoOOH9ABt4&s=10" alt="Global Internet network map">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Z6xx7rP7irPSOfZyEt_I31Zh0hTR3hq7U3P3-6BrtHzzhDoOOH9ABt4&s=10"
+          alt="Global Internet network map">
       </div>
     </section>
 
@@ -477,7 +580,8 @@
     <section class="slide" data-slide="6">
       <div class="content">
         <h2>What is the <span class="gradient-text">Web?</span> 🕸️</h2>
-        <p>The Web (World Wide Web) is a <strong>collection of websites and web pages</strong> accessible via the Internet.</p>
+        <p>The Web (World Wide Web) is a <strong>collection of websites and web pages</strong> accessible via the
+          Internet.</p>
         <ul>
           <li>Uses browsers like Chrome, Firefox, Edge 🌐</li>
           <li>Built with HTML, CSS & JavaScript</li>
@@ -509,7 +613,9 @@
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShjjx30HoeBwu6g8WWxadmlA6T34N7Y4DwuA1vKdbGyrmUXBqkt9C96Oeo&s=10" alt="WWW diagram">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShjjx30HoeBwu6g8WWxadmlA6T34N7Y4DwuA1vKdbGyrmUXBqkt9C96Oeo&s=10"
+          alt="WWW diagram">
       </div>
     </section>
 
@@ -517,7 +623,8 @@
     <section class="slide" data-slide="8">
       <div class="content">
         <h2>Founder of the <span class="gradient-text">WWW</span> 👨‍💻</h2>
-        <p><strong>Sir Tim Berners-Lee</strong> invented the World Wide Web in 1989 while working at CERN, Switzerland.</p>
+        <p><strong>Sir Tim Berners-Lee</strong> invented the World Wide Web in 1989 while working at CERN, Switzerland.
+        </p>
         <ul>
           <li>Created the first web browser & server</li>
           <li>Designed <strong>HTML, HTTP & URLs</strong></li>
@@ -529,7 +636,8 @@
         </div>
       </div>
       <div class="image-wrap round">
-        <img src="https://entrepreneurship.mit.edu/wp-content/uploads/Tim-Berners-Lee-640-1.jpg" alt="Sir Tim Berners-Lee">
+        <img src="https://entrepreneurship.mit.edu/wp-content/uploads/Tim-Berners-Lee-640-1.jpg"
+          alt="Sir Tim Berners-Lee">
       </div>
     </section>
 
@@ -537,7 +645,9 @@
     <section class="slide" data-slide="9">
       <div class="content">
         <h2>What is <span class="gradient-text">HTML?</span> 📄</h2>
-        <p><strong>HTML</strong> = <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</p>
+        <p><strong>HTML</strong> = <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup
+          <strong>L</strong>anguage
+        </p>
         <ul>
           <li>The <strong>skeleton</strong> of every web page 🦴</li>
           <li>Uses <strong>tags</strong> like &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;</li>
@@ -549,7 +659,9 @@
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdT8zIw-Ki0ZJu8QgJBjJKdhYams1tRxxHQL42uIRVlg&s=10" alt="HTML5 Logo">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdT8zIw-Ki0ZJu8QgJBjJKdhYams1tRxxHQL42uIRVlg&s=10"
+          alt="HTML5 Logo">
       </div>
     </section>
 
@@ -557,7 +669,9 @@
     <section class="slide" data-slide="10">
       <div class="content">
         <h2>What is <span class="gradient-text">HTTP?</span> 📨</h2>
-        <p><strong>HTTP</strong> = <strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol</p>
+        <p><strong>HTTP</strong> = <strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer
+          <strong>P</strong>rotocol
+        </p>
         <ul>
           <li>The <strong>language</strong> browsers & servers use to talk 🗣️</li>
           <li>When you visit a URL, browser sends an <strong>HTTP Request</strong></li>
@@ -569,7 +683,8 @@
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240529150129/HTTP-.gif" alt="HTTP protocol diagram">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240529150129/HTTP-.gif"
+          alt="HTTP protocol diagram">
       </div>
     </section>
 
@@ -610,7 +725,9 @@
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQor1Qh__x6-RmK3fIIHlumJp71PuLgffKKVW8qjLPpOdMhbufMX4DVcSu&s=10" alt="Browser icon" style="max-height: 40vh;">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQor1Qh__x6-RmK3fIIHlumJp71PuLgffKKVW8qjLPpOdMhbufMX4DVcSu&s=10"
+          alt="Browser icon" style="max-height: 40vh;">
       </div>
     </section>
 
@@ -618,7 +735,8 @@
     <section class="slide" data-slide="13">
       <div class="content">
         <h2>What is a <span class="gradient-text">Search Engine?</span> 🔍</h2>
-        <p>A <strong>search engine</strong> is a website that helps you <strong>find information</strong> on the Web.</p>
+        <p>A <strong>search engine</strong> is a website that helps you <strong>find information</strong> on the Web.
+        </p>
         <ul>
           <li><strong>Google</strong> — most popular worldwide</li>
           <li><strong>Bing</strong> — by Microsoft</li>
@@ -630,7 +748,8 @@
         </div>
       </div>
       <div class="image-wrap">
-        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240110183913/how-search-engine-works.jpeg" alt="Google Search Engine">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240110183913/how-search-engine-works.jpeg"
+          alt="Google Search Engine">
       </div>
     </section>
 
@@ -641,17 +760,21 @@
         <div class="compare-card browser">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Browser">
           <h3>🖥️ Browser</h3>
-          <p><strong>Software</strong> installed on your computer. Displays ANY website — YouTube, Facebook, Google, etc.</p>
+          <p><strong>Software</strong> installed on your computer. Displays ANY website — YouTube, Facebook, Google,
+            etc.</p>
         </div>
         <div class="vs-badge" style="font-size: 1.5rem;">≠</div>
         <div class="compare-card search">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/240px-Google_%22G%22_logo.svg.png" alt="Search Engine">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/240px-Google_%22G%22_logo.svg.png"
+            alt="Search Engine">
           <h3>🔍 Search Engine</h3>
           <p>A <strong>website</strong> you visit INSIDE a browser. Helps you search & find other websites.</p>
         </div>
       </div>
       <div class="highlight-box pink" style="max-width: 700px; margin-top: 1.5rem;">
-        <p>🧠 <strong>Key Point:</strong> You use a Browser to OPEN a Search Engine. Chrome is NOT Google — Chrome is the browser, Google is a website!</p>
+        <p>🧠 <strong>Key Point:</strong> You use a Browser to OPEN a Search Engine. Chrome is NOT Google — Chrome is
+          the browser, Google is a website!</p>
       </div>
     </section>
 
@@ -659,7 +782,8 @@
     <section class="slide title-slide" data-slide="15">
       <div class="emoji-deco">🎉</div>
       <h1>Ready to <span class="gradient-text">Build the Web?</span></h1>
-      <p class="subtitle">You now know the foundations! Next up — we'll write our first lines of HTML & CSS. Let's code! 💻✨</p>
+      <p class="subtitle">You now know the foundations! Next up — we'll write our first lines of HTML & CSS. Let's code!
+        💻✨</p>
       <div class="tech-row" style="margin-top: 1.5rem;">
         <div class="tech-item">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
@@ -675,7 +799,8 @@
         </div>
       </div>
       <div class="highlight-box green" style="max-width: 500px; margin-top: 2rem;">
-        <p style="text-align: center; font-size: 1.2rem;"><strong>HTML BATCH 3 — Let's Go! 🚀</strong></p>
+        <p style="text-align: center; font-size: 1.2rem;"><strong>HTML BATCH 3 — Let's Go! <a href="./dayTwo.html">Day
+              Two</a></strong> </p>
       </div>
     </section>
 
@@ -716,4 +841,5 @@
   </script>
 
 </body>
+
 </html>

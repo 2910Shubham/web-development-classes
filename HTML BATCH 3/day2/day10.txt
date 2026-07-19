@@ -1,0 +1,59 @@
+COlORS
+----------
+>> CSS मे हम 3 तरह से color change कर सकते हैं |
+
+1> पहला तरीका 
+-----------------
+color के नाम से जैसे: red,  yellow, green etc..
+
+2> दूसरा तरीका 
+----------------
+
+hex के साथ॥ 
+
+Number System
+-------------
+
+4 tarah ke numbers hote hain
+
+Decimal: jiske andar 10 symbols hote hian, numbers ko represent karne ke liye
+
+ex: 0 1 2 3 4 5 6 7 8 9 
+
+Binery :  jiske andar 2 symbols hote hian, numbers ko represent karne ke liye 
+
+ex: 0 1 
+
+Octal number: jiske andar 8 symbols hote hian, numbers ko represent karne ke liye 
+
+ex: 0 1 2 3 4 5 6 7
+
+Hex : jiske andar 16 symbols hote hian, numbers ko represent karne ke liye 
+
+ex: 0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+where, A = 10, B = 11, C = 12, D = 13, E = 14, F = 15
+
+
+Hex color (हम जीतने भी colors बनते हैं वो सब red green and blue से बनते हैं )
+
+#ff0000 
+#00ff00 
+#0000ff  
+
+#-ff-ff-ff यहाँ पहले 2 ff red, बीच के 2 ff green के और आखिर के 2 ff blue के 
+
+#ffaacc
+#123456
+#ffDDAA
+
+
+3> तीसरा तरीका 
+--------------
+rgb यह r  का मतबल red , g का मतलब green और b का मतलब blue 
+
+rgb(255,0,0)
+rgb(0,255,0)
+rgb(0,0,255)
+
+

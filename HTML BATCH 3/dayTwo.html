@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Dev — Day 2 | HTML & CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070a16;
+      --card:rgba(255,255,255,.06);
+      --card-border:rgba(255,255,255,.12);
+      --text:#eef2ff;
+      --muted:rgba(238,242,255,.72);
+      --blue:#38bdf8;
+      --green:#34d399;
+      --purple:#a78bfa;
+      --yellow:#fbbf24;
+      --code:#0b1024;
+      --shadow: 0 20px 70px rgba(0,0,0,.45);
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(56,189,248,.25), transparent 45%),
+        radial-gradient(circle at 75% 55%, rgba(167,139,250,.25), transparent 45%),
+        radial-gradient(circle at 35% 85%, rgba(52,211,153,.14), transparent 50%),
+        var(--bg);
+      overflow:hidden;
+    }
+
+    .presentation{
+      height:100vh;
+      width:100%;
+      padding: 2.2rem 3rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .slide{
+      display:none;
+      width:min(1200px, 100%);
+      height:100%;
+      padding: 1rem;
+      overflow:auto;
+      animation: in .45s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .slide.active{ display:block; }
+
+    @keyframes in{
+      from{ opacity:0; transform: translateY(16px) scale(.99); }
+      to{ opacity:1; transform: translateY(0) scale(1); }
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .badge{
+      font-family:"Fredoka", system-ui, sans-serif;
+      font-weight:700;
+      padding:.45rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(167,139,250,.95));
+      color: #06101f;
+      font-size:.98rem;
+      white-space:nowrap;
+    }
+
+    .hint{
+      color: var(--muted);
+      font-weight:700;
+      font-size:.92rem;
+      opacity:.95;
+      white-space:nowrap;
+    }
+
+    h1{
+      font-family:"Fredoka", system-ui, sans-serif;
+      font-size: clamp(1.8rem, 3.2vw, 3rem);
+      line-height:1.1;
+      margin-bottom: .7rem;
+    }
+    h2{
+      font-family:"Fredoka", system-ui, sans-serif;
+      font-size: clamp(1.25rem, 2.3vw, 2.2rem);
+      line-height:1.2;
+      margin-bottom: .75rem;
+    }
+    .grad{
+      background: linear-gradient(135deg, var(--yellow), var(--blue), var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .subtitle{
+      color: var(--muted);
+      font-size: clamp(.98rem, 1.6vw, 1.18rem);
+      line-height:1.75;
+      max-width: 62ch;
+      margin-bottom: 1rem;
+    }
+
+    .layout2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items:center;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      margin-top: 1rem;
+    }
+
+    .pill{
+      padding:.4rem .75rem;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight:700;
+      font-size:.92rem;
+    }
+    .pill.blue{ border-color: rgba(56,189,248,.35); }
+    .pill.green{ border-color: rgba(52,211,153,.35); }
+    .pill.purple{ border-color: rgba(167,139,250,.35); }
+    .pill.yellow{ border-color: rgba(251,191,36,.35); }
+
+    ul, ol{
+      margin-left: 1.2rem;
+      margin-top: .6rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    li{ margin:.35rem 0; }
+
+    .codebox{
+      background: linear-gradient(180deg, rgba(11,16,36,.95), rgba(11,16,36,.78));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 1rem 1.05rem;
+      overflow:auto;
+    }
+    pre{
+      color: #e6f0ff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre;
+      margin: 0;
+    }
+
+    .imgWrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height: 260px;
+    }
+    img{
+      max-width:100%;
+      max-height: 56vh;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 60px rgba(0,0,0,.5);
+      object-fit: cover;
+    }
+    .roundImg{
+      width: 240px; height: 240px;
+      border-radius: 999px;
+      object-fit: cover;
+    }
+
+    .tagsGrid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .75rem;
+      margin-top: .9rem;
+    }
+    .tagCard{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: .8rem .75rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight:800;
+      color: var(--text);
+      text-align:center;
+      line-height: 1.2;
+      transition: transform .15s ease;
+    }
+    .tagCard:hover{ transform: translateY(-3px); }
+    .tagCard small{
+      display:block;
+      font-family: "Nunito", sans-serif;
+      font-weight:700;
+      color: var(--muted);
+      margin-top: .25rem;
+      font-size:.82rem;
+    }
+
+    .stepTitle{
+      font-weight: 900;
+      font-size: 1.05rem;
+      margin-bottom: .35rem;
+      color: rgba(238,242,255,.92);
+    }
+
+    .slideNo{
+      font-family:"Fredoka", system-ui, sans-serif;
+      font-weight: 800;
+      color: var(--muted);
+      opacity:.95;
+      font-size: .95rem;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    @media (max-width: 880px){
+      .presentation{ padding: 1.2rem 1rem; }
+      .layout2{ grid-template-columns: 1fr; }
+      .imgWrap{ min-height: 160px; }
+      img{ max-height: 40vh; }
+      .tagsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="presentation" id="app" tabindex="0" aria-label="HTML CSS slide deck">
+
+    <!-- Slide 1 -->
+    <section class="slide active" data-slide="1">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 1 / 8</div>
+      </div>
+      <div class="layout2">
+        <div>
+          <h1>Where do we write code?</h1>
+          <p class="subtitle">
+            We write code on a computer, using a <span class="grad">code editor</span>. Then we open a browser to see the results.
+          </p>
+          <div class="card">
+            <div class="stepTitle">Flow (simple)</div>
+            <ol>
+              <li>Write code in the editor</li>
+              <li>Save the file</li>
+              <li>Open in a browser</li>
+            </ol>
+            <div class="pill-row">
+              <span class="pill blue">Editor</span>
+              <span class="pill purple">File</span>
+              <span class="pill green">Browser</span>
+            </div>
+          </div>
+        </div>
+        <div class="imgWrap">
+          <img
+            src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?fm=jpg&q=60&w=1200&auto=format&fit=crop"
+            alt="Coding on a laptop at a desk"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide" data-slide="2">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 2 / 8</div>
+      </div>
+      <div class="layout2">
+        <div class="imgWrap">
+          <img
+            src="https://images.unsplash.com/photo-1634078111133-a1e12d6131b6?fm=jpg&q=60&w=1000&auto=format&fit=crop"
+            alt="Notebook and keyboard reference"
+          />
+        </div>
+        <div>
+          <h2>What is a code editor?</h2>
+          <p class="subtitle">
+            A <span class="grad">code editor</span> is like a notebook for programmers:
+            it lets you type code, organize files, and highlight mistakes.
+          </p>
+          <div class="card">
+            <ul>
+              <li>Type and edit code easily</li>
+              <li>Syntax highlighting (colors for tags)</li>
+              <li>Auto-indent + helpful suggestions</li>
+              <li>Save files quickly</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill blue">Notepad-like</span>
+              <span class="pill purple">Smart</span>
+              <span class="pill yellow">Helps you</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide" data-slide="3">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 3 / 8</div>
+      </div>
+      <div class="layout2">
+        <div>
+          <h2>We will use VS Code</h2>
+          <p class="subtitle">
+            VS Code is a popular <span class="grad">free code editor</span> made by Microsoft.
+          </p>
+          <div class="card">
+            <div class="stepTitle">VS Code features</div>
+            <ul>
+              <li>Fast & lightweight</li>
+              <li>Great for HTML/CSS/JS</li>
+              <li>Extensions (extra tools)</li>
+              <li>Built-in terminal</li>
+            </ul>
+            <div style="height: .7rem;"></div>
+            <div class="stepTitle">Installation (Windows)</div>
+            <ol>
+              <li>Download VS Code from the official site</li>
+              <li>Run the installer</li>
+              <li>Open VS Code</li>
+            </ol>
+          </div>
+        </div>
+        <div class="imgWrap">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
+            alt="Visual Studio Code icon"
+            class="roundImg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide" data-slide="4">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 4 / 8</div>
+      </div>
+      <div class="layout2">
+        <div class="imgWrap">
+          <img
+            src="https://images.unsplash.com/photo-1586282391129-76a6df230234?fm=jpg&q=60&w=1200&auto=format&fit=crop"
+            alt="Folder and laptop reference"
+          />
+        </div>
+        <div>
+          <h2>Create your first HTML file: <span class="grad">index.html</span></h2>
+          <p class="subtitle">We start with a folder and one HTML file.</p>
+          <div class="card">
+            <ol>
+              <li>Create a folder (example: <b>day2</b>)</li>
+              <li>Inside it, create a file named <b>index.html</b></li>
+              <li>Open <b>index.html</b> in VS Code</li>
+            </ol>
+            <div class="codebox" style="margin-top: 1rem;">
+              <pre>day2/<br>  └── index.html</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" data-slide="5">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 5 / 8</div>
+      </div>
+      <div class="layout2">
+        <div>
+          <h2>Your first line: <span class="grad">Hello Duniya</span></h2>
+          <p class="subtitle">
+            In HTML, headings are written using <b>h1</b>. Let’s print our first message.
+          </p>
+          <div class="codebox">
+            <pre>&lt;h1&gt;Hello Duniya&lt;/h1&gt;</pre>
+          </div>
+          <div class="pill-row" style="margin-top: 1rem;">
+            <span class="pill blue">Start simple</span>
+            <span class="pill green">Save</span>
+            <span class="pill purple">Open in browser</span>
+          </div>
+        </div>
+        <div class="imgWrap">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/af/VS-Code_HTML-Sample.png"
+            alt="Example of HTML code in VS Code"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide" data-slide="6">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 6 / 8</div>
+      </div>
+      <h2>HTML boilerplate + HTML tree</h2>
+      <p class="subtitle">Root element, head/meta tags, and body tags.</p>
+      <div class="layout2">
+        <div class="codebox">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello Duniya&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+        <div class="card">
+          <div class="stepTitle">HTML tree (visual)</div>
+          <pre style="color: var(--muted); margin-top: .6rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: .98rem; line-height: 1.8;">
+html (root)
+├─ head
+│  ├─ meta charset
+│  ├─ meta viewport
+│  └─ title
+└─ body
+   └─ visible content</pre>
+          <div class="pill-row" style="margin-top: 1rem;">
+            <span class="pill blue">`html` root</span>
+            <span class="pill purple">`head`</span>
+            <span class="pill green">`body` visible</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide" data-slide="7">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 7 / 8</div>
+      </div>
+      <h2>Headings: <span class="grad">h1</span> to <span class="grad">h6</span></h2>
+      <p class="subtitle">They control importance and size (h1 is the biggest).</p>
+      <div class="layout2">
+        <div class="card">
+          <div class="codebox">
+            <pre>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</pre>
+          </div>
+        </div>
+        <div class="card" style="padding:1.4rem 1.3rem;">
+          <div style="transform: translateY(-6px);">
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 2.4rem;">Heading 1</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.8rem; margin-top:.5rem; color: rgba(238,242,255,.9);">Heading 2</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.35rem; margin-top:.55rem; color: rgba(238,242,255,.85);">Heading 3</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.12rem; margin-top:.55rem; color: rgba(238,242,255,.8);">Heading 4</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: .98rem; margin-top:.45rem; color: rgba(238,242,255,.76);">Heading 5</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: .9rem; margin-top:.35rem; color: rgba(238,242,255,.72);">Heading 6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8 -->
+    <section class="slide" data-slide="8">
+      <div class="topbar">
+        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="slideNo">Slide 8 / 8</div>
+      </div>
+      <h2>HTML tags we will use</h2>
+      <p class="subtitle">Start small. Use these often while learning HTML.</p>
+      <div class="card">
+        <div class="tagsGrid">
+          <div class="tagCard">&lt;h1-h6&gt;<small>Headings</small></div>
+          <div class="tagCard">&lt;p&gt;<small>Paragraph</small></div>
+          <div class="tagCard">&lt;a&gt;<small>Link</small></div>
+          <div class="tagCard">&lt;img&gt;<small>Image</small></div>
+          <div class="tagCard">&lt;div&gt;<small>Section box</small></div>
+          <div class="tagCard">&lt;span&gt;<small>Inline text</small></div>
+          <div class="tagCard">&lt;ul&gt;<small>List (ul)</small></div>
+          <div class="tagCard">&lt;ol&gt;<small>List (ol)</small></div>
+          <div class="tagCard">&lt;li&gt;<small>List item</small></div>
+          <div class="tagCard">&lt;button&gt;<small>Button</small></div>
+          <div class="tagCard">&lt;form&gt;<small>Form</small></div>
+          <div class="tagCard">&lt;input&gt;<small>Input field</small></div>
+          <div class="tagCard">&lt;label&gt;<small>Field label</small></div>
+          <div class="tagCard">&lt;textarea&gt;<small>Multi-line</small></div>
+          <div class="tagCard">&lt;br&gt;<small>Line break</small></div>
+          <div class="tagCard">&lt;hr&gt;<small>Divider</small></div>
+          <div class="tagCard">&lt;strong&gt;<small>Bold</small></div>
+          <div class="tagCard">&lt;em&gt;<small>Emphasis</small></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+    let current = 0;
+
+    function update() {
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    }
+
+    function next() {
+      if (current < total - 1) {
+        current++;
+        update();
+      }
+    }
+
+    function prev() {
+      if (current > 0) {
+        current--;
+        update();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      // Mouse users can just click the window once; arrows will work.
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+  </script>
+</body>
+</html>
