@@ -1,25 +1,72 @@
 body{
+    height: 100vh;
     background-color: rgb(87, 114, 22);
     margin:0 ;
     padding: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content:center; 
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .box {
+    display: block;
+    flex-direction: column;
     border-width: 2px;
     border-style: solid;
     border-color: blue;
-    height: auto;
-    width: 200px;
+    height: 450px;
+    width: 500px;
     background-color: chocolate;
-    padding: 20px;
+    padding: 2px;
+    /* padding-top: 10px ; */
 }
 
 
 
 .child {
+    
     border: 1px dashed rgb(255, 247, 0);
     margin: 5px;
-     height: 50px;
+    height: 50px;
     width: 100px;
     background-color: rgb(13, 86, 131);
+    color: white;
+    margin-top: 45px;
+    margin-left: 45px;
+}
+
+/* 2nd box */
+
+.box2 {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border-width: 2px;
+    border-style: solid;
+    border-color: blue;
+    height: 150px;
+    width: 200px;
+    background-color: chocolate;
+    padding: 2px;
+    /* padding-top: 10px ; */
+}
+
+
+
+.child-2 {
+    
+    border: 1px dashed rgb(255, 247, 0);
+    margin: 5px;
+    height: 50px;
+    width: 100px;
+    background-color: rgb(13, 86, 131);
+    color: white;
+    /* margin-top: 45px;
+    margin-left: 45px; */
+}
+
+.red1 {
+    color: red
 }
