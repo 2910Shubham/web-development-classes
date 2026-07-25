@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML CSS Quiz</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #e9e9e9;
+    margin: 0;
+    padding: 30px 10px;
+    color: #222;
+  }
+  .paper {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px 50px;
+    border: 1px solid #999;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  }
+  .paper-header {
+    text-align: center;
+    border-bottom: 3px double #333;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+  .paper-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+  .paper-header .quiz-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .paper-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #444;
+  }
+  .section-title {
+    background: #f0f0f0;
+    border-left: 5px solid #333;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 30px 0 15px 0;
+  }
+  .question {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #ccc;
+  }
+  .question p.q-text {
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    font-size: 15.5px;
+  }
+  .options {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+  }
+  .options li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  .options label {
+    cursor: pointer;
+  }
+  .options input[type="radio"] {
+    margin-right: 8px;
+  }
+  .submit-bar {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 3px double #333;
+  }
+  button#submitBtn {
+    background: #2b2b2b;
+    color: #fff;
+    border: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  button#submitBtn:hover {
+    background: #000;
+  }
+  #result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+  }
+  .correct {
+    background: #d9f7d9 !important;
+  }
+  .incorrect {
+    background: #f9d6d6 !important;
+  }
+  .question.correct, .question.incorrect {
+    padding: 10px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="paper">
+  <div class="paper-header">
+    <h1>HTML & CSS Quiz</h1>
+    <div class="quiz-label">Quiz 2</div>
+    <div class="paper-meta">
+      <span>Subject: Web Development</span>
+      <span>Total Questions: 40</span>
+      <span>Time: 40 Minutes</span>
+    </div>
+  </div>
+
+  <form id="quizForm">
+
+    <div class="section-title">Section A: HTML (Q1 - Q15)</div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">1. What does HTML stand for?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q1" value="A"> A) Hyper Text Markup Language</label></li>
+        <li><label><input type="radio" name="q1" value="B"> B) High Text Machine Language</label></li>
+        <li><label><input type="radio" name="q1" value="C"> C) Hyper Transfer Markup Language</label></li>
+        <li><label><input type="radio" name="q1" value="D"> D) Hyper Tool Markup Language</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">2. Which tag is the root element of an HTML page?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q2" value="A"> A) &lt;body&gt;</label></li>
+        <li><label><input type="radio" name="q2" value="B"> B) &lt;head&gt;</label></li>
+        <li><label><input type="radio" name="q2" value="C"> C) &lt;html&gt;</label></li>
+        <li><label><input type="radio" name="q2" value="D"> D) &lt;title&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">3. Which tag is used to create a hyperlink?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q3" value="A"> A) &lt;link&gt;</label></li>
+        <li><label><input type="radio" name="q3" value="B"> B) &lt;href&gt;</label></li>
+        <li><label><input type="radio" name="q3" value="C"> C) &lt;a&gt;</label></li>
+        <li><label><input type="radio" name="q3" value="D"> D) &lt;url&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">4. Which attribute specifies the destination of a hyperlink?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q4" value="A"> A) src</label></li>
+        <li><label><input type="radio" name="q4" value="B"> B) href</label></li>
+        <li><label><input type="radio" name="q4" value="C"> C) path</label></li>
+        <li><label><input type="radio" name="q4" value="D"> D) target</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">5. Which tag is used to display an image?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q5" value="A"> A) &lt;image&gt;</label></li>
+        <li><label><input type="radio" name="q5" value="B"> B) &lt;img&gt;</label></li>
+        <li><label><input type="radio" name="q5" value="C"> C) &lt;picture&gt;</label></li>
+        <li><label><input type="radio" name="q5" value="D"> D) &lt;photo&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">6. Which attribute provides alternative text for an image?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q6" value="A"> A) title</label></li>
+        <li><label><input type="radio" name="q6" value="B"> B) alt</label></li>
+        <li><label><input type="radio" name="q6" value="C"> C) src</label></li>
+        <li><label><input type="radio" name="q6" value="D"> D) href</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">7. Which tag creates an unordered list?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q7" value="A"> A) &lt;ol&gt;</label></li>
+        <li><label><input type="radio" name="q7" value="B"> B) &lt;ul&gt;</label></li>
+        <li><label><input type="radio" name="q7" value="C"> C) &lt;li&gt;</label></li>
+        <li><label><input type="radio" name="q7" value="D"> D) &lt;dl&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">8. Which tag creates an ordered list?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q8" value="A"> A) &lt;ul&gt;</label></li>
+        <li><label><input type="radio" name="q8" value="B"> B) &lt;ol&gt;</label></li>
+        <li><label><input type="radio" name="q8" value="C"> C) &lt;li&gt;</label></li>
+        <li><label><input type="radio" name="q8" value="D"> D) &lt;list&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">9. Which attribute merges multiple columns in a table?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q9" value="A"> A) rowspan</label></li>
+        <li><label><input type="radio" name="q9" value="B"> B) colspan</label></li>
+        <li><label><input type="radio" name="q9" value="C"> C) merge</label></li>
+        <li><label><input type="radio" name="q9" value="D"> D) span</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">10. Which attribute merges multiple rows in a table?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q10" value="A"> A) colspan</label></li>
+        <li><label><input type="radio" name="q10" value="B"> B) rowspan</label></li>
+        <li><label><input type="radio" name="q10" value="C"> C) merge</label></li>
+        <li><label><input type="radio" name="q10" value="D"> D) rows</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">11. Which tag is used to create an HTML form?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q11" value="A"> A) &lt;input&gt;</label></li>
+        <li><label><input type="radio" name="q11" value="B"> B) &lt;form&gt;</label></li>
+        <li><label><input type="radio" name="q11" value="C"> C) &lt;label&gt;</label></li>
+        <li><label><input type="radio" name="q11" value="D"> D) &lt;fieldset&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">12. Which input type hides the typed characters?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q12" value="A"> A) text</label></li>
+        <li><label><input type="radio" name="q12" value="B"> B) email</label></li>
+        <li><label><input type="radio" name="q12" value="C"> C) password</label></li>
+        <li><label><input type="radio" name="q12" value="D"> D) hidden</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">13. Which input type allows only one option to be selected?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q13" value="A"> A) checkbox</label></li>
+        <li><label><input type="radio" name="q13" value="B"> B) radio</label></li>
+        <li><label><input type="radio" name="q13" value="C"> C) select</label></li>
+        <li><label><input type="radio" name="q13" value="D"> D) button</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">14. Which tag creates a drop-down menu?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q14" value="A"> A) &lt;option&gt;</label></li>
+        <li><label><input type="radio" name="q14" value="B"> B) &lt;list&gt;</label></li>
+        <li><label><input type="radio" name="q14" value="C"> C) &lt;select&gt;</label></li>
+        <li><label><input type="radio" name="q14" value="D"> D) &lt;choice&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">15. Which attribute makes a field mandatory?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q15" value="A"> A) important</label></li>
+        <li><label><input type="radio" name="q15" value="B"> B) mandatory</label></li>
+        <li><label><input type="radio" name="q15" value="C"> C) required</label></li>
+        <li><label><input type="radio" name="q15" value="D"> D) validate</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section B: CSS Basics (Q16 - Q25)</div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">16. What does CSS stand for?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q16" value="A"> A) Computer Style Sheets</label></li>
+        <li><label><input type="radio" name="q16" value="B"> B) Creative Style Sheets</label></li>
+        <li><label><input type="radio" name="q16" value="C"> C) Cascading Style Sheets</label></li>
+        <li><label><input type="radio" name="q16" value="D"> D) Colorful Style Sheets</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">17. Which CSS property changes the text color?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q17" value="A"> A) font-color</label></li>
+        <li><label><input type="radio" name="q17" value="B"> B) text-color</label></li>
+        <li><label><input type="radio" name="q17" value="C"> C) color</label></li>
+        <li><label><input type="radio" name="q17" value="D"> D) background-color</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">18. Which CSS property changes the background color?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q18" value="A"> A) color</label></li>
+        <li><label><input type="radio" name="q18" value="B"> B) background-color</label></li>
+        <li><label><input type="radio" name="q18" value="C"> C) bg-color</label></li>
+        <li><label><input type="radio" name="q18" value="D"> D) fill</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">19. Which selector selects an element using its ID?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q19" value="A"> A) .</label></li>
+        <li><label><input type="radio" name="q19" value="B"> B) #</label></li>
+        <li><label><input type="radio" name="q19" value="C"> C) *</label></li>
+        <li><label><input type="radio" name="q19" value="D"> D) @</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">20. Which selector selects elements using a class?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q20" value="A"> A) .</label></li>
+        <li><label><input type="radio" name="q20" value="B"> B) #</label></li>
+        <li><label><input type="radio" name="q20" value="C"> C) *</label></li>
+        <li><label><input type="radio" name="q20" value="D"> D) &amp;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">21. Which property changes the font size?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q21" value="A"> A) text-size</label></li>
+        <li><label><input type="radio" name="q21" value="B"> B) font-size</label></li>
+        <li><label><input type="radio" name="q21" value="C"> C) size</label></li>
+        <li><label><input type="radio" name="q21" value="D"> D) font</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">22. Which property centers text horizontally?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q22" value="A"> A) text-style</label></li>
+        <li><label><input type="radio" name="q22" value="B"> B) align</label></li>
+        <li><label><input type="radio" name="q22" value="C"> C) text-align</label></li>
+        <li><label><input type="radio" name="q22" value="D"> D) center</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">23. Which property adds a border around an element?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q23" value="A"> A) outline</label></li>
+        <li><label><input type="radio" name="q23" value="B"> B) border</label></li>
+        <li><label><input type="radio" name="q23" value="C"> C) frame</label></li>
+        <li><label><input type="radio" name="q23" value="D"> D) line</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">24. Which property adds an image to the webpage background?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q24" value="A"> A) background</label></li>
+        <li><label><input type="radio" name="q24" value="B"> B) image</label></li>
+        <li><label><input type="radio" name="q24" value="C"> C) background-image</label></li>
+        <li><label><input type="radio" name="q24" value="D"> D) img</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">25. Which value makes a background image cover the entire screen?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q25" value="A"> A) contain</label></li>
+        <li><label><input type="radio" name="q25" value="B"> B) fill</label></li>
+        <li><label><input type="radio" name="q25" value="C"> C) cover</label></li>
+        <li><label><input type="radio" name="q25" value="D"> D) stretch</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section C: Box Model (Q26 - Q30)</div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">26. Which part of the box model contains the actual text or image?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q26" value="A"> A) Margin</label></li>
+        <li><label><input type="radio" name="q26" value="B"> B) Border</label></li>
+        <li><label><input type="radio" name="q26" value="C"> C) Content</label></li>
+        <li><label><input type="radio" name="q26" value="D"> D) Padding</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">27. Padding is the space ______ the border.</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q27" value="A"> A) outside</label></li>
+        <li><label><input type="radio" name="q27" value="B"> B) inside</label></li>
+        <li><label><input type="radio" name="q27" value="C"> C) above</label></li>
+        <li><label><input type="radio" name="q27" value="D"> D) below</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">28. Margin is the space ______ the border.</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q28" value="A"> A) inside</label></li>
+        <li><label><input type="radio" name="q28" value="B"> B) outside</label></li>
+        <li><label><input type="radio" name="q28" value="C"> C) within content</label></li>
+        <li><label><input type="radio" name="q28" value="D"> D) between letters</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">29. Which CSS property sets the width of an element?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q29" value="A"> A) size</label></li>
+        <li><label><input type="radio" name="q29" value="B"> B) width</label></li>
+        <li><label><input type="radio" name="q29" value="C"> C) length</label></li>
+        <li><label><input type="radio" name="q29" value="D"> D) dimension</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">30. Which CSS property sets the height of an element?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q30" value="A"> A) size</label></li>
+        <li><label><input type="radio" name="q30" value="B"> B) width</label></li>
+        <li><label><input type="radio" name="q30" value="C"> C) height</label></li>
+        <li><label><input type="radio" name="q30" value="D"> D) length</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section D: Flexbox &amp; Grid (Q31 - Q40)</div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">31. Which property enables Flexbox?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q31" value="A"> A) display:block</label></li>
+        <li><label><input type="radio" name="q31" value="B"> B) display:flex</label></li>
+        <li><label><input type="radio" name="q31" value="C"> C) display:grid</label></li>
+        <li><label><input type="radio" name="q31" value="D"> D) flex:true</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">32. Which property changes the direction of Flex items?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q32" value="A"> A) flex-wrap</label></li>
+        <li><label><input type="radio" name="q32" value="B"> B) flex-direction</label></li>
+        <li><label><input type="radio" name="q32" value="C"> C) justify-content</label></li>
+        <li><label><input type="radio" name="q32" value="D"> D) align-items</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">33. Which property aligns Flex items horizontally?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q33" value="A"> A) align-items</label></li>
+        <li><label><input type="radio" name="q33" value="B"> B) justify-content</label></li>
+        <li><label><input type="radio" name="q33" value="C"> C) flex-direction</label></li>
+        <li><label><input type="radio" name="q33" value="D"> D) gap</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">34. Which property aligns Flex items vertically?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q34" value="A"> A) justify-content</label></li>
+        <li><label><input type="radio" name="q34" value="B"> B) align-items</label></li>
+        <li><label><input type="radio" name="q34" value="C"> C) gap</label></li>
+        <li><label><input type="radio" name="q34" value="D"> D) order</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">35. Which property adds space between Flex items?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q35" value="A"> A) margin</label></li>
+        <li><label><input type="radio" name="q35" value="B"> B) padding</label></li>
+        <li><label><input type="radio" name="q35" value="C"> C) gap</label></li>
+        <li><label><input type="radio" name="q35" value="D"> D) spacing</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">36. Which property allows Flex items to move onto the next line?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q36" value="A"> A) flex-direction</label></li>
+        <li><label><input type="radio" name="q36" value="B"> B) flex-grow</label></li>
+        <li><label><input type="radio" name="q36" value="C"> C) flex-wrap</label></li>
+        <li><label><input type="radio" name="q36" value="D"> D) flex-shrink</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">37. Which property enables CSS Grid?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q37" value="A"> A) display:flex</label></li>
+        <li><label><input type="radio" name="q37" value="B"> B) display:grid</label></li>
+        <li><label><input type="radio" name="q37" value="C"> C) grid:true</label></li>
+        <li><label><input type="radio" name="q37" value="D"> D) display:block</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">38. Which property defines the number and size of Grid columns?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q38" value="A"> A) grid-columns</label></li>
+        <li><label><input type="radio" name="q38" value="B"> B) grid-template-columns</label></li>
+        <li><label><input type="radio" name="q38" value="C"> C) grid-column-size</label></li>
+        <li><label><input type="radio" name="q38" value="D"> D) column-template</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">39. Which property defines the number and size of Grid rows?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q39" value="A"> A) grid-rows</label></li>
+        <li><label><input type="radio" name="q39" value="B"> B) row-template</label></li>
+        <li><label><input type="radio" name="q39" value="C"> C) grid-template-rows</label></li>
+        <li><label><input type="radio" name="q39" value="D"> D) rows-template</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">40. Which unit divides the available space proportionally in CSS Grid?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q40" value="A"> A) px</label></li>
+        <li><label><input type="radio" name="q40" value="B"> B) %</label></li>
+        <li><label><input type="radio" name="q40" value="C"> C) fr</label></li>
+        <li><label><input type="radio" name="q40" value="D"> D) em</label></li>
+      </ul>
+    </div>
+
+    <div class="submit-bar">
+      <button type="button" id="submitBtn" onclick="gradeQuiz()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+  </form>
+</div>
+
+<script>
+function gradeQuiz() {
+  const questions = document.querySelectorAll('.question');
+  let score = 0;
+  let unanswered = 0;
+
+  questions.forEach(function(q) {
+    const correct = q.getAttribute('data-answer');
+    const name = q.querySelector('input[type="radio"]').name;
+    const selected = q.querySelector('input[name="' + name + '"]:checked');
+
+    q.classList.remove('correct', 'incorrect');
+
+    if (!selected) {
+      unanswered++;
+      return;
+    }
+
+    if (selected.value === correct) {
+      score++;
+      q.classList.add('correct');
+    } else {
+      q.classList.add('incorrect');
+    }
+  });
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = 'Score: ' + score + ' / 40' +
+    (unanswered > 0 ? '<br><span style="font-size:14px; font-weight:normal;">(' + unanswered + ' question(s) left unanswered)</span>' : '');
+
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>
