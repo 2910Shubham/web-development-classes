@@ -1,0 +1,13 @@
+What we will learn today ?
+
+1> Hover effect
+2> Transform effect
+3> Transition animation
+
+What we will create today..?
+
+1> Responsive Nav bar
+2> Hero/Landing page
+3> GRadient Backgrond
+4> Call to action Button
+5> 3 product card
