@@ -27,11 +27,18 @@ nav ul {
 nav a{
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: bold;  
 }
 
 nav a:hover {
     color: orange;
+}
+
+.active-nav{
+    color:orange;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .login-btn {

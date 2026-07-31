@@ -1,0 +1,12 @@
+
+
+contact form
+
+Name
+Email
+subject
+message
+
+after submit(page)
+
+thank you your message is sent our team will try to connect with you within 24 hours
