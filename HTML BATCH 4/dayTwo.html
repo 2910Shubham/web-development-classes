@@ -9,17 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#10231f;
-      --card:rgba(255,250,240,.08);
-      --card-border:rgba(255,209,102,.22);
-      --text:#fffaf0;
-      --muted:rgba(201,216,206,.82);
-      --blue:#4dd4c6;
-      --green:#9be564;
-      --purple:#ff7a59;
+      --bg:#07111f;
+      --card:rgba(13,29,52,.72);
+      --card-border:rgba(39,231,255,.22);
+      --text:#f8fbff;
+      --muted:rgba(184,199,219,.86);
+      --blue:#27e7ff;
+      --green:#8cff78;
+      --purple:#ff5c8a;
       --yellow:#ffd166;
-      --code:#142b27;
-      --shadow: 0 20px 70px rgba(0,0,0,.45);
+      --orange:#ff8a3d;
+      --code:#081526;
+      --shadow: 0 24px 70px rgba(0,0,0,.5);
+      --glow: 0 0 34px rgba(39,231,255,.28);
     }
 
     *{ margin:0; padding:0; box-sizing:border-box; }
@@ -28,29 +30,57 @@
       font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 12% 20%, rgba(77,212,198,.25), transparent 45%),
-        radial-gradient(circle at 75% 55%, rgba(255,122,89,.22), transparent 45%),
-        radial-gradient(circle at 35% 85%, rgba(155,229,100,.14), transparent 50%),
+        url("image2.png") center / cover no-repeat,
         var(--bg);
       overflow:hidden;
+      padding: 2.5rem 3.5rem;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background: rgba(5,12,24,.38);
+      z-index:0;
     }
 
     .presentation{
-      height:100vh;
+      position:relative;
+      z-index:1;
+      height:100%;
       width:100%;
       padding: 2.2rem 3rem;
       display:flex;
       align-items:center;
       justify-content:center;
+      border: 1px solid rgba(39,231,255,.16);
+      border-radius: 18px;
+      background: rgba(8,21,38,.36);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 28px 90px rgba(0,0,0,.42);
+      overflow:hidden;
+    }
+
+    .presentation::before{
+      content:"</>";
+      position:absolute;
+      right:4%;
+      top:7%;
+      color:rgba(39,231,255,.08);
+      font:900 clamp(4rem,12vw,10rem) ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      transform:rotate(-10deg);
+      pointer-events:none;
     }
 
     .slide{
       display:none;
       width:min(1200px, 100%);
       height:100%;
-      padding: 1rem;
+      padding: 1.5rem 2rem;
       overflow:auto;
       animation: in .45s cubic-bezier(.2,.9,.2,1);
+      position:relative;
+      z-index:1;
     }
 
     .slide.active{ display:block; }
@@ -71,12 +101,13 @@
     .badge{
       font-family:"Fredoka", system-ui, sans-serif;
       font-weight:700;
-      padding:.45rem 1rem;
+      padding:.55rem 1.35rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, rgba(77,212,198,.95), rgba(255,209,102,.95));
-      color: #10231f;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      color: var(--bg);
       font-size:.98rem;
       white-space:nowrap;
+      box-shadow: 0 14px 42px rgba(39,231,255,.26);
     }
 
     .hint{
@@ -89,21 +120,23 @@
 
     h1{
       font-family:"Fredoka", system-ui, sans-serif;
-      font-size: clamp(1.8rem, 3.2vw, 3rem);
-      line-height:1.1;
+      font-size: clamp(2.4rem, 4.8vw, 4.4rem);
+      line-height:1.03;
       margin-bottom: .7rem;
+      text-shadow: 0 12px 42px rgba(0,0,0,.42);
     }
     h2{
       font-family:"Fredoka", system-ui, sans-serif;
-      font-size: clamp(1.25rem, 2.3vw, 2.2rem);
+      font-size: clamp(1.7rem, 3.5vw, 3rem);
       line-height:1.2;
       margin-bottom: .75rem;
     }
     .grad{
-      background: linear-gradient(135deg, var(--yellow), var(--blue), var(--purple));
+      background: linear-gradient(120deg, var(--yellow), var(--orange), var(--purple), var(--blue));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
+      filter: drop-shadow(0 0 20px rgba(39,231,255,.18));
     }
 
     .subtitle{
@@ -112,6 +145,7 @@
       line-height:1.75;
       max-width: 62ch;
       margin-bottom: 1rem;
+      font-weight:700;
     }
 
     .layout2{
@@ -124,7 +158,7 @@
     .card{
       background: var(--card);
       border: 1px solid var(--card-border);
-      border-radius: 18px;
+      border-radius: 14px;
       padding: 1.2rem 1.3rem;
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
@@ -141,14 +175,14 @@
       padding:.4rem .75rem;
       border-radius: 999px;
       border: 1px solid var(--card-border);
-      background: rgba(255,250,240,.06);
+      background: rgba(13,29,52,.72);
       color: var(--text);
       font-weight:700;
       font-size:.92rem;
     }
-    .pill.blue{ border-color: rgba(77,212,198,.4); }
-    .pill.green{ border-color: rgba(155,229,100,.4); }
-    .pill.purple{ border-color: rgba(255,122,89,.4); }
+    .pill.blue{ border-color: rgba(39,231,255,.4); }
+    .pill.green{ border-color: rgba(140,255,120,.4); }
+    .pill.purple{ border-color: rgba(255,92,138,.4); }
     .pill.yellow{ border-color: rgba(255,209,102,.45); }
 
     ul, ol{
@@ -160,13 +194,15 @@
       font-size: 1rem;
     }
     li{ margin:.35rem 0; }
+    li::marker{ color: var(--blue); font-weight:900; }
 
     .codebox{
-      background: linear-gradient(180deg, rgba(20,43,39,.96), rgba(20,43,39,.8));
-      border: 1px solid rgba(255,209,102,.18);
+      background: rgba(8,21,38,.88);
+      border: 1px solid rgba(39,231,255,.22);
       border-radius: 16px;
       padding: 1rem 1.05rem;
       overflow:auto;
+      box-shadow: var(--glow);
     }
     pre{
       color: #f7fff7;
@@ -182,13 +218,26 @@
       align-items:center;
       justify-content:center;
       min-height: 260px;
+      position:relative;
+    }
+    .imgWrap::before{
+      content:"";
+      position:absolute;
+      width:min(92%, 720px);
+      height:62%;
+      border-radius:26px;
+      background: rgba(39,231,255,.18);
+      filter: blur(34px);
+      opacity:.7;
+      transform: translateY(16px);
     }
     img{
+      position:relative;
       max-width:100%;
       max-height: 56vh;
-      border-radius: 18px;
-      border: 1px solid rgba(255,209,102,.22);
-      box-shadow: 0 18px 60px rgba(0,0,0,.5);
+      border-radius: 16px;
+      border: 1px solid rgba(39,231,255,.38);
+      box-shadow: 0 24px 70px rgba(0,0,0,.55), var(--glow);
       object-fit: cover;
     }
     .roundImg{
@@ -204,8 +253,8 @@
       margin-top: .9rem;
     }
     .tagCard{
-      background: rgba(255,250,240,.06);
-      border: 1px solid rgba(255,209,102,.18);
+      background: rgba(13,29,52,.72);
+      border: 1px solid rgba(39,231,255,.22);
       border-radius: 14px;
       padding: .8rem .75rem;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -215,7 +264,11 @@
       line-height: 1.2;
       transition: transform .15s ease;
     }
-    .tagCard:hover{ transform: translateY(-3px); }
+    .tagCard:hover{
+      transform: translateY(-3px);
+      border-color: rgba(39,231,255,.48);
+      box-shadow: var(--glow);
+    }
     .tagCard small{
       display:block;
       font-family: "Nunito", sans-serif;
@@ -229,7 +282,7 @@
       font-weight: 900;
       font-size: 1.05rem;
       margin-bottom: .35rem;
-      color: rgba(255,250,240,.92);
+      color: rgba(248,251,255,.92);
     }
 
     .slideNo{
@@ -257,7 +310,7 @@
     <!-- Slide 1 -->
     <section class="slide active" data-slide="1">
       <div class="topbar">
-        <div class="badge">HTML BATCH 3 — Day 2</div>
+        <div class="badge">HTML BATCH 4 — Day 2</div>
         <div class="slideNo">Slide 1 / 8</div>
       </div>
       <div class="layout2">
@@ -487,11 +540,11 @@ html (root)
         <div class="card" style="padding:1.4rem 1.3rem;">
           <div style="transform: translateY(-6px);">
             <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 2.4rem;">Heading 1</div>
-            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.8rem; margin-top:.5rem; color: rgba(255,250,240,.9);">Heading 2</div>
-            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.35rem; margin-top:.55rem; color: rgba(255,250,240,.85);">Heading 3</div>
-            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.12rem; margin-top:.55rem; color: rgba(255,250,240,.8);">Heading 4</div>
-            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: .98rem; margin-top:.45rem; color: rgba(255,250,240,.76);">Heading 5</div>
-            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: .9rem; margin-top:.35rem; color: rgba(255,250,240,.72);">Heading 6</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.8rem; margin-top:.5rem; color: rgba(248,251,255,.9);">Heading 2</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.35rem; margin-top:.55rem; color: rgba(248,251,255,.85);">Heading 3</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: 1.12rem; margin-top:.55rem; color: rgba(248,251,255,.8);">Heading 4</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: .98rem; margin-top:.45rem; color: rgba(248,251,255,.76);">Heading 5</div>
+            <div style="font-family:'Fredoka',sans-serif; font-weight:800; font-size: .9rem; margin-top:.35rem; color: rgba(248,251,255,.72);">Heading 6</div>
           </div>
         </div>
       </div>
