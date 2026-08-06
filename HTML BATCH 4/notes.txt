@@ -1,0 +1,29 @@
+1. What is Tag..?
+--> Tag browser ko batata hai ki content ko kaise display karna hai.
+
+
+2. What is element..?
+--> Opening Tag + content + Closing Tag = HTML element
+
+3. Empty Tags..?
+--> Kuch aise tags hote hain jo text content nhi dikhate hain, wo sirf attributes ka istemal karte hain,
+aise tags ko Closing tag ki zaroorat nhi hoti hai, jise hum empty tag ya self cloasing tag kehte hai.
+
+4. HTML Structure (Discuss)
+
+
+
+5. HEading Tags (Done)
+
+6. Line break..?
+
+7.  Text formating tag .
+   
+    <b>/ <strong> - text ko bold karta hai
+    <i>/ <em>- text ko italic karta hai
+    <u> - underline krta hai
+    <mark> - highlight
+    <strik>
+
+
+
