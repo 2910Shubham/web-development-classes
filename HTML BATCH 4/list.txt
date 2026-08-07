@@ -1,0 +1,42 @@
+1. What is list in HTML..?
+
+--> HTML list ka use related items ko systematically display karne ke liye hota hai.
+
+* There are 3 types of list in HTML.
+
+i) Ordered List
+
+1. Rahul Kumar (1st)
+2. Rinki Kumari (2nd)
+3. Vinod kumar (3rd)
+
+for Ordered list we use 
+
+<ol>
+<li> </li>
+</ol>
+
+ii) Unordered list
+
+* Pyaj
+* Karela
+* Aaloo
+* Dhaniya
+
+<ul>
+  <li> </li>
+</ul>
+
+iii) Description List
+
+What is HTML?
+   HTML is HYPER TEXT MARKUP LANGUAGE
+
+What is CSS ..?
+    CSS is used to style web pages.
+
+  Syntax:  <dl> 
+      <dt>What is HTML?</dt>
+      <dd> HTML is HYPER TEXT MARKUP LANGUAGE</dd>
+    </dl>
+

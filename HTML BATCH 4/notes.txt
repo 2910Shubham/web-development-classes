@@ -24,6 +24,15 @@ aise tags ko Closing tag ki zaroorat nhi hoti hai, jise hum empty tag ya self cl
     <u> - underline krta hai
     <mark> - highlight
     <strik>
+    <b> vs <strong> 
+    <i> vs <em>
+    sup
+    sub
+
+
+
+    
+
 
 
 
