@@ -35,7 +35,9 @@ What is HTML?
 What is CSS ..?
     CSS is used to style web pages.
 
-  Syntax:  <dl> 
+  Syntax:
+  
+    <dl> 
       <dt>What is HTML?</dt>
       <dd> HTML is HYPER TEXT MARKUP LANGUAGE</dd>
     </dl>

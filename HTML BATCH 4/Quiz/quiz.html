@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML CSS Quiz</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #e9e9e9;
+    margin: 0;
+    padding: 30px 10px;
+    color: #222;
+  }
+  .paper {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px 50px;
+    border: 1px solid #999;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  }
+  .paper-header {
+    text-align: center;
+    border-bottom: 3px double #333;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+  .paper-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  .paper-header .quiz-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .paper-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #444;
+  }
+  .section-title {
+    background: #f0f0f0;
+    border-left: 5px solid #333;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 30px 0 15px 0;
+  }
+  .question {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #ccc;
+  }
+  .question p.q-text {
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    font-size: 15.5px;
+  }
+  .options {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+  }
+  .options li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  .options label {
+    cursor: pointer;
+  }
+  .options input[type="radio"] {
+    margin-right: 8px;
+  }
+  .submit-bar {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 3px double #333;
+  }
+  button#submitBtn {
+    background: #2b2b2b;
+    color: #fff;
+    border: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  button#submitBtn:hover {
+    background: #000;
+  }
+  #result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+  }
+  .correct {
+    background: #d9f7d9 !important;
+  }
+  .incorrect {
+    background: #f9d6d6 !important;
+  }
+  .question.correct, .question.incorrect {
+    padding: 10px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="paper">
+  <div class="paper-header">
+    <h1>HTML &amp; CSS Quiz</h1>
+    <div class="quiz-label">Batch 4 — HTML &amp; CSS MCQ Test</div>
+    <div class="paper-meta">
+      <span>Subject: Web Development</span>
+      <span>Total Questions: 40</span>
+      
+    </div>
+  </div>
+
+  <form id="quizForm">
+
+    <div class="section-title">Section A: HTML Basics (Q1 - Q8)</div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">1. HTML ka full form kya hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q1" value="A"> A) HyperText Markup Language</label></li>
+        <li><label><input type="radio" name="q1" value="B"> B) HyperText Machine Language</label></li>
+        <li><label><input type="radio" name="q1" value="C"> C) HighText Markup Language</label></li>
+        <li><label><input type="radio" name="q1" value="D"> D) Hyperlink Text Management Language</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">2. HTML kya hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q2" value="A"> A) Programming Language</label></li>
+        <li><label><input type="radio" name="q2" value="B"> B) Markup Language</label></li>
+        <li><label><input type="radio" name="q2" value="C"> C) Database Language</label></li>
+        <li><label><input type="radio" name="q2" value="D"> D) Styling Language</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">3. HTML ka primary purpose kya hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q3" value="A"> A) Database create karna</label></li>
+        <li><label><input type="radio" name="q3" value="B"> B) Webpage ka structure banana</label></li>
+        <li><label><input type="radio" name="q3" value="C"> C) Server manage karna</label></li>
+        <li><label><input type="radio" name="q3" value="D"> D) Website ko secure karna</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">4. HTML document ka root element kaunsa hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q4" value="A"> A) &lt;body&gt;</label></li>
+        <li><label><input type="radio" name="q4" value="B"> B) &lt;head&gt;</label></li>
+        <li><label><input type="radio" name="q4" value="C"> C) &lt;html&gt;</label></li>
+        <li><label><input type="radio" name="q4" value="D"> D) &lt;root&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">5. Visible webpage content generally kis element ke andar hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q5" value="A"> A) &lt;head&gt;</label></li>
+        <li><label><input type="radio" name="q5" value="B"> B) &lt;body&gt;</label></li>
+        <li><label><input type="radio" name="q5" value="C"> C) &lt;title&gt;</label></li>
+        <li><label><input type="radio" name="q5" value="D"> D) &lt;meta&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">6. Browser ko HTML5 document identify karne ke liye kya use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q6" value="A"> A) &lt;html5&gt;</label></li>
+        <li><label><input type="radio" name="q6" value="B"> B) &lt;doctype&gt;</label></li>
+        <li><label><input type="radio" name="q6" value="C"> C) &lt;!DOCTYPE html&gt;</label></li>
+        <li><label><input type="radio" name="q6" value="D"> D) &lt;version="5"&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">7. &lt;title&gt; tag generally kahan likha jata hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q7" value="A"> A) &lt;body&gt;</label></li>
+        <li><label><input type="radio" name="q7" value="B"> B) &lt;footer&gt;</label></li>
+        <li><label><input type="radio" name="q7" value="C"> C) &lt;head&gt;</label></li>
+        <li><label><input type="radio" name="q7" value="D"> D) &lt;html&gt; ke bahar</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">8. HTML mein comment ka correct syntax kya hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q8" value="A"> A) // Comment</label></li>
+        <li><label><input type="radio" name="q8" value="B"> B) /* Comment */</label></li>
+        <li><label><input type="radio" name="q8" value="C"> C) &lt;!-- Comment --&gt;</label></li>
+        <li><label><input type="radio" name="q8" value="D"> D) # Comment</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section B: Tags, Elements &amp; Attributes (Q9 - Q16)</div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">9. HTML tag ka example kaunsa hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q9" value="A"> A) &lt;p&gt;</label></li>
+        <li><label><input type="radio" name="q9" value="B"> B) Hello</label></li>
+        <li><label><input type="radio" name="q9" value="C"> C) ="text"</label></li>
+        <li><label><input type="radio" name="q9" value="D"> D) HTML</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">10. HTML element generally kis combination se banta hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q10" value="A"> A) Attribute + Value</label></li>
+        <li><label><input type="radio" name="q10" value="B"> B) Opening tag + Content + Closing tag</label></li>
+        <li><label><input type="radio" name="q10" value="C"> C) CSS + HTML</label></li>
+        <li><label><input type="radio" name="q10" value="D"> D) Browser + Server</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">11. &lt;p&gt;Hello&lt;/p&gt; mein Hello kya hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q11" value="A"> A) Attribute</label></li>
+        <li><label><input type="radio" name="q11" value="B"> B) Tag</label></li>
+        <li><label><input type="radio" name="q11" value="C"> C) Content</label></li>
+        <li><label><input type="radio" name="q11" value="D"> D) Element</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">12. Inmein se kaunsa empty/void element hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q12" value="A"> A) &lt;p&gt;</label></li>
+        <li><label><input type="radio" name="q12" value="B"> B) &lt;h1&gt;</label></li>
+        <li><label><input type="radio" name="q12" value="C"> C) &lt;br&gt;</label></li>
+        <li><label><input type="radio" name="q12" value="D"> D) &lt;strong&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">13. &lt;img&gt; tag ka closing tag kya hoga?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q13" value="A"> A) &lt;/img&gt;</label></li>
+        <li><label><input type="radio" name="q13" value="B"> B) &lt;/image&gt;</label></li>
+        <li><label><input type="radio" name="q13" value="C"> C) Closing tag required nahi hota</label></li>
+        <li><label><input type="radio" name="q13" value="D"> D) &lt;/src&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">14. HTML attributes ka purpose kya hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q14" value="A"> A) Extra information/properties provide karna</label></li>
+        <li><label><input type="radio" name="q14" value="B"> B) HTML document delete karna</label></li>
+        <li><label><input type="radio" name="q14" value="C"> C) Browser install karna</label></li>
+        <li><label><input type="radio" name="q14" value="D"> D) CSS ko replace karna</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">15. Attribute generally kahan likha jata hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q15" value="A"> A) Closing tag mein</label></li>
+        <li><label><input type="radio" name="q15" value="B"> B) Opening tag mein</label></li>
+        <li><label><input type="radio" name="q15" value="C"> C) HTML document ke bahar</label></li>
+        <li><label><input type="radio" name="q15" value="D"> D) &lt;body&gt; ke baad</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">16. Correct attribute syntax kaunsa hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q16" value="A"> A) &lt;p title:Hello&gt;</label></li>
+        <li><label><input type="radio" name="q16" value="B"> B) &lt;p title="Hello"&gt;</label></li>
+        <li><label><input type="radio" name="q16" value="C"> C) &lt;p "title"="Hello"&gt;</label></li>
+        <li><label><input type="radio" name="q16" value="D"> D) &lt;p title-&gt;Hello</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section C: Basic HTML Tags (Q17 - Q24)</div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">17. Sabse important/main heading ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q17" value="A"> A) &lt;heading&gt;</label></li>
+        <li><label><input type="radio" name="q17" value="B"> B) &lt;h6&gt;</label></li>
+        <li><label><input type="radio" name="q17" value="C"> C) &lt;h1&gt;</label></li>
+        <li><label><input type="radio" name="q17" value="D"> D) &lt;head&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="D">
+      <p class="q-text">18. HTML mein total heading levels kitne hote hain?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q18" value="A"> A) 3</label></li>
+        <li><label><input type="radio" name="q18" value="B"> B) 4</label></li>
+        <li><label><input type="radio" name="q18" value="C"> C) 5</label></li>
+        <li><label><input type="radio" name="q18" value="D"> D) 6</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">19. Paragraph create karne ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q19" value="A"> A) &lt;para&gt;</label></li>
+        <li><label><input type="radio" name="q19" value="B"> B) &lt;text&gt;</label></li>
+        <li><label><input type="radio" name="q19" value="C"> C) &lt;p&gt;</label></li>
+        <li><label><input type="radio" name="q19" value="D"> D) &lt;paragraph&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">20. New line create karne ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q20" value="A"> A) &lt;newline&gt;</label></li>
+        <li><label><input type="radio" name="q20" value="B"> B) &lt;br&gt;</label></li>
+        <li><label><input type="radio" name="q20" value="C"> C) &lt;line&gt;</label></li>
+        <li><label><input type="radio" name="q20" value="D"> D) &lt;nl&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">21. Horizontal line create karne ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q21" value="A"> A) &lt;line&gt;</label></li>
+        <li><label><input type="radio" name="q21" value="B"> B) &lt;br&gt;</label></li>
+        <li><label><input type="radio" name="q21" value="C"> C) &lt;hr&gt;</label></li>
+        <li><label><input type="radio" name="q21" value="D"> D) &lt;horizontal&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">22. Kisi website ka link create karne ke liye commonly kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q22" value="A"> A) &lt;link&gt;</label></li>
+        <li><label><input type="radio" name="q22" value="B"> B) &lt;a&gt;</label></li>
+        <li><label><input type="radio" name="q22" value="C"> C) &lt;href&gt;</label></li>
+        <li><label><input type="radio" name="q22" value="D"> D) &lt;url&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">23. &lt;a&gt; tag mein destination URL specify karne ke liye kaunsa attribute use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q23" value="A"> A) src</label></li>
+        <li><label><input type="radio" name="q23" value="B"> B) url</label></li>
+        <li><label><input type="radio" name="q23" value="C"> C) href</label></li>
+        <li><label><input type="radio" name="q23" value="D"> D) link</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">24. Image display karne ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q24" value="A"> A) &lt;picture&gt;</label></li>
+        <li><label><input type="radio" name="q24" value="B"> B) &lt;image&gt;</label></li>
+        <li><label><input type="radio" name="q24" value="C"> C) &lt;img&gt;</label></li>
+        <li><label><input type="radio" name="q24" value="D"> D) &lt;src&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section D: Formatting Tags (Q25 - Q30)</div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">25. Text ko bold dikhane ke liye commonly kaunsa tag use kiya ja sakta hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q25" value="A"> A) &lt;bold&gt;</label></li>
+        <li><label><input type="radio" name="q25" value="B"> B) &lt;b&gt;</label></li>
+        <li><label><input type="radio" name="q25" value="C"> C) &lt;strongtext&gt;</label></li>
+        <li><label><input type="radio" name="q25" value="D"> D) &lt;bd&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">26. Semantically important text ko indicate karne ke liye kaunsa tag better hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q26" value="A"> A) &lt;b&gt;</label></li>
+        <li><label><input type="radio" name="q26" value="B"> B) &lt;bold&gt;</label></li>
+        <li><label><input type="radio" name="q26" value="C"> C) &lt;strong&gt;</label></li>
+        <li><label><input type="radio" name="q26" value="D"> D) &lt;important&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">27. Emphasized text ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q27" value="A"> A) &lt;em&gt;</label></li>
+        <li><label><input type="radio" name="q27" value="B"> B) &lt;italic&gt;</label></li>
+        <li><label><input type="radio" name="q27" value="C"> C) &lt;i-text&gt;</label></li>
+        <li><label><input type="radio" name="q27" value="D"> D) &lt;e&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">28. Text ko highlight karne ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q28" value="A"> A) &lt;highlight&gt;</label></li>
+        <li><label><input type="radio" name="q28" value="B"> B) &lt;mark&gt;</label></li>
+        <li><label><input type="radio" name="q28" value="C"> C) &lt;yellow&gt;</label></li>
+        <li><label><input type="radio" name="q28" value="D"> D) &lt;hl&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">29. Water ka chemical formula H₂O likhne ke liye 2 ko lower position par dikhane ke liye kya use karenge?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q29" value="A"> A) &lt;sup&gt;</label></li>
+        <li><label><input type="radio" name="q29" value="B"> B) &lt;sub&gt;</label></li>
+        <li><label><input type="radio" name="q29" value="C"> C) &lt;small&gt;</label></li>
+        <li><label><input type="radio" name="q29" value="D"> D) &lt;down&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">30. x² mein 2 ko upper position par dikhane ke liye kya use karenge?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q30" value="A"> A) &lt;sub&gt;</label></li>
+        <li><label><input type="radio" name="q30" value="B"> B) &lt;up&gt;</label></li>
+        <li><label><input type="radio" name="q30" value="C"> C) &lt;sup&gt;</label></li>
+        <li><label><input type="radio" name="q30" value="D"> D) &lt;small&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section E: HTML Lists (Q31 - Q38)</div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">31. HTML mein ordered list create karne ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q31" value="A"> A) &lt;list&gt;</label></li>
+        <li><label><input type="radio" name="q31" value="B"> B) &lt;ol&gt;</label></li>
+        <li><label><input type="radio" name="q31" value="C"> C) &lt;ul&gt;</label></li>
+        <li><label><input type="radio" name="q31" value="D"> D) &lt;order&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">32. Unordered list ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q32" value="A"> A) &lt;ol&gt;</label></li>
+        <li><label><input type="radio" name="q32" value="B"> B) &lt;li&gt;</label></li>
+        <li><label><input type="radio" name="q32" value="C"> C) &lt;ul&gt;</label></li>
+        <li><label><input type="radio" name="q32" value="D"> D) &lt;unorder&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">33. List item ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q33" value="A"> A) &lt;item&gt;</label></li>
+        <li><label><input type="radio" name="q33" value="B"> B) &lt;list-item&gt;</label></li>
+        <li><label><input type="radio" name="q33" value="C"> C) &lt;li&gt;</label></li>
+        <li><label><input type="radio" name="q33" value="D"> D) &lt;i&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">34. Agar kisi process ke steps ka order important hai, to kaunsa list use karna chahiye?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q34" value="A"> A) &lt;ul&gt;</label></li>
+        <li><label><input type="radio" name="q34" value="B"> B) &lt;ol&gt;</label></li>
+        <li><label><input type="radio" name="q34" value="C"> C) &lt;dl&gt;</label></li>
+        <li><label><input type="radio" name="q34" value="D"> D) &lt;li&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">35. Shopping items ki list banani ho jahan order important nahi hai, to kya use karenge?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q35" value="A"> A) &lt;ol&gt;</label></li>
+        <li><label><input type="radio" name="q35" value="B"> B) &lt;ul&gt;</label></li>
+        <li><label><input type="radio" name="q35" value="C"> C) &lt;dl&gt;</label></li>
+        <li><label><input type="radio" name="q35" value="D"> D) &lt;order&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">36. Description List ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q36" value="A"> A) &lt;description&gt;</label></li>
+        <li><label><input type="radio" name="q36" value="B"> B) &lt;dl&gt;</label></li>
+        <li><label><input type="radio" name="q36" value="C"> C) &lt;list-description&gt;</label></li>
+        <li><label><input type="radio" name="q36" value="D"> D) &lt;ddlist&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">37. Description List mein term define karne ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q37" value="A"> A) &lt;dt&gt;</label></li>
+        <li><label><input type="radio" name="q37" value="B"> B) &lt;dd&gt;</label></li>
+        <li><label><input type="radio" name="q37" value="C"> C) &lt;term&gt;</label></li>
+        <li><label><input type="radio" name="q37" value="D"> D) &lt;def&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="C">
+      <p class="q-text">38. Description List mein description dene ke liye kaunsa tag use hota hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q38" value="A"> A) &lt;description&gt;</label></li>
+        <li><label><input type="radio" name="q38" value="B"> B) &lt;dt&gt;</label></li>
+        <li><label><input type="radio" name="q38" value="C"> C) &lt;dd&gt;</label></li>
+        <li><label><input type="radio" name="q38" value="D"> D) &lt;desc&gt;</label></li>
+      </ul>
+    </div>
+
+    <div class="section-title">Section F: Nested Lists &amp; Concepts (Q39 - Q40)</div>
+
+    <div class="question" data-answer="B">
+      <p class="q-text">39. Ek list ke andar doosri list ko kya kaha jata hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q39" value="A"> A) Multiple List</label></li>
+        <li><label><input type="radio" name="q39" value="B"> B) Nested List</label></li>
+        <li><label><input type="radio" name="q39" value="C"> C) Double List</label></li>
+        <li><label><input type="radio" name="q39" value="D"> D) Child HTML</label></li>
+      </ul>
+    </div>
+
+    <div class="question" data-answer="A">
+      <p class="q-text">40. Nested list banane ke liye, ek &lt;li&gt; item ke andar kaunsa element place kiya jata hai?</p>
+      <ul class="options">
+        <li><label><input type="radio" name="q40" value="A"> A) Ek naya &lt;ul&gt; ya &lt;ol&gt;</label></li>
+        <li><label><input type="radio" name="q40" value="B"> B) Ek naya &lt;li&gt;</label></li>
+        <li><label><input type="radio" name="q40" value="C"> C) &lt;nested&gt; tag</label></li>
+        <li><label><input type="radio" name="q40" value="D"> D) &lt;sub-list&gt; tag</label></li>
+      </ul>
+    </div>
+
+    <div class="submit-bar">
+      <button type="button" id="submitBtn" onclick="gradeQuiz()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+  </form>
+</div>
+
+<script>
+function gradeQuiz() {
+  const questions = document.querySelectorAll('.question');
+  let score = 0;
+  let unanswered = 0;
+
+  questions.forEach(function(q) {
+    const correct = q.getAttribute('data-answer');
+    const name = q.querySelector('input[type="radio"]').name;
+    const selected = q.querySelector('input[name="' + name + '"]:checked');
+
+    q.classList.remove('correct', 'incorrect');
+
+    if (!selected) {
+      unanswered++;
+      return;
+    }
+
+    if (selected.value === correct) {
+      score++;
+      q.classList.add('correct');
+    } else {
+      q.classList.add('incorrect');
+    }
+  });
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = 'Score: ' + score + ' / 40' +
+    (unanswered > 0 ? '<br><span style="font-size:14px; font-weight:normal;">(' + unanswered + ' question(s) left unanswered)</span>' : '');
+
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>
