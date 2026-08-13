@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Table</title>
+    <style>
+      body {
+        background-color: green;
+      }
+
+       table { 
+            /* border-collapse: collapse; */
+        }
+
+       /* table, th, td {
+            border: 1px solid black;
+        } */
+    </style>
+  </head>
+  <body>
+    <h1>Student Details</h1>
+
+    <table border="" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Class</th>
+        <th>Marks</th>
+      </tr>
+
+      <tr>
+        <td>Rahul</td>
+        <td>25</td>
+        <td>7th</td>
+        <td>200</td>
+      </tr>
+
+      <tr>
+        <td>Rohan</td>
+        <td>22</td>
+        <td>7th</td>
+        <td>225</td>
+      </tr>
+    </table>
+
+    <!-- Report Cars Table -->
+
+    <h1>Report Card</h1>
+
+    <table border="">
+      <!-- Table head -->
+      <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Full Marks</th>
+        <th>Pass Marks</th>
+        <th>Marks Obtained</th>
+        <th>Highest Marks</th>
+      </tr>
+
+      <!-- Rahul's Data -->
+
+      <tr>
+        <td>Rahul</td>
+        <td>10th</td>
+        <th>100</th>
+        <th>40</th>
+        <th>65</th>
+        <th>95</th>
+      </tr>
+
+      <!-- Rohan's Data -->
+      <tr>
+        <td>Rohan</td>
+        <td>10th</td>
+        <th>100</th>
+        <th>40</th>
+        <th>75</th>
+        <th>95</th>
+      </tr>
+
+      <!-- Rhitika's Data-->
+      <tr>
+        <td>Rhitika</td>
+        <td>10th</td>
+        <th>100</th>
+        <th>40</th>
+        <th>95</th>
+        <th>95</th>
+      </tr>
+    </table>
+
+
+<!-- Rowspan and Colspan -->
+
+<h1>Rowspan and Colspan</h1>
+ 
+<table border="" cellpadding="0" cellspacing="0">
+
+     <tr>
+        <th colspan="7">Student Details</th>
+    </tr>
+    
+    <tr>
+        <th>School</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Full Marks</th>
+        <th>Pass Marks</th>
+        <th>Marks Obtained</th>
+        <th>Highest Marks</th>
+      </tr>
+      <!-- Rahul's Data -->
+
+      <tr>
+        <td rowspan="3">ABC</td>
+        <td>Rahul</td>
+        <td>10th</td>
+        <th>100</th>
+        <th>40</th>
+        <th>65</th>
+        <th>95</th>
+      </tr>
+
+      <!-- Rohan's Data -->
+      <tr>
+        
+        <td>Rohan</td>
+        <td>10th</td>
+        <th>100</th>
+        <th>40</th>
+        <th>75</th>
+        <th>95</th>
+      </tr>
+
+      <!-- Rhitika's Data-->
+      <tr>
+  
+        <td>Rhitika</td>
+        <td>10th</td>
+        <th>100</th>
+        <th>40</th>
+        <th>95</th>
+        <th>95</th>
+      </tr>
+
+
+</table>
+
+<h1>Todays Learnings</h1>
+<table border="">
+    <tr>
+        <th colspan="2">Todays Leanings</th>
+    </tr>
+
+    <tr>
+        <th>Tags</th>
+        <th>Attributes</th>
+    </tr>
+
+    <tr>
+        <td>Table</td>
+        <td>border</td>
+    </tr>
+
+    <tr>
+        <td>tr</td>
+        <td>rowspan</td>
+    </tr>
+
+    <tr>
+        <td>th</td>
+        <td>colspan</td>
+    </tr>
+
+    <tr>
+        <td>td</td>
+        <td>cellpadding & cellspacing</td>
+    </tr>
+</table>
+
+  </body>
+</html>
