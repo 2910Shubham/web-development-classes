@@ -1,3 +1,18 @@
 What is HTML Table..?
+--> HTML table ka use Tabular Data ko rows and columns ke form me represent karne ke liye hota hai...
 
---> HTML table ka use Tabular Data ko rows and columns ke form me represent karne ke liye hota hai. 
+
+
+Parts of Table:
+
+Row: horizontal
+columns: Vertical
+cell: individual box
+
+table header: Top most row of the Table.
+
+
+Todays Learnings:
+
+
+
