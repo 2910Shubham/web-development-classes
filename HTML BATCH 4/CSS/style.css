@@ -1,0 +1,16 @@
+
+* {
+    margin: 20px;
+}
+
+#namste {
+    color: orange;
+}
+
+.hello {
+    color: green;
+}
+
+h1, p, h3, li {
+    color: green
+}

@@ -1,0 +1,43 @@
+1) What is CSS..?
+--> Cascading Style Sheets.
+
+2) Role of CSS..
+--> Webpage ka design control karta hai
+--> It control the appearance/design of the Webpage.
+
+3) How to write css..?
+
+there are 3 ways to write CSS..
+
+1) Inline CSS : tag ke andar likh ke
+2) Internal CSS : html file ke head tag ke andar likh ke
+3) External CSS : ek .css file create karke.
+
+
+4) CSS Syntax
+
+selector {
+    property: value;
+}
+
+
+ex: 
+
+h1{
+   color: red; 
+}
+
+
+
+1) Inline CSS : tag ke andar likh ke
+2) Internal CSS : html file ke head tag ke andar likh ke
+3) External CSS : ek .css file create karke.
+
+
+5) Selectors
+ 1. Element Selector : select with tag: using tag name;
+ 2. ID selector  : using ID name (same id dusre Element ko nahi dete hain)
+ 3. Class Selector : using class name ( same class multiple Element ko de sakte hain)
+ 4. Universal Selector : * (star ka use karke)
+
+ 5. Grouping Selector : write multiple Element together
