@@ -1,88 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="/style.css">
     <style>
-      h1 {
-        color: aquamarine
-      }
-      input {
-        color: orange;
-      }
+        body{
+            background-color: green;
+        }
     </style>
-  </head>
-  <body>
-    <form action="">
-      <h1 style="color: green">Hello</h1>
-      <h1>Hii</h1>
-      <label for="">ID</label>
-      <input style="color: rgb(232, 232, 232); background-color: rgb(101, 17, 17);" type="text" value="2026" placeholder="Enter your ID" />
-      <br />
-      <label for="">Name</label>
-      <br />
-      <input type="text" placeholder="Enter your Name" />
-      <br />
-      <label for="">Marks</label>
-      <br />
-      <input type="number" placeholder="Enter your marks" />
-      <br />
-      <label for="email">Email</label>
-      <br />
-      <input type="email" placeholder="Email" id="email"/>
-      <br />
-      <label for="">Password</label>
-      <br />
-      <input type="password" placeholder="password" />
-      <br />
-       
-      <!-- Radio -->
-      <label for="">Gender:</label>
-      <br />
-      <input type="radio" />
-      <label for="">Male</label>
-      <input type="radio" />
-      <label for="">Female</label>
+</head>
+<body>
+ <h1>Student Registration Form</h1>
 
-      <hr />
+<form> 
+    <label for="">Full Name:</label>
+    <input type="text" placeholder="Rahul Kumar" name="fname" required>
+    <br> <br>
 
-      <!-- checkbox -->
-      <label for="">Hobies:</label>
-      <br />
-      <input type="checkbox" />
-      <label for="">cricket</label>
+    <label for="">E-Mail:</label>
+    <input type="email" placeholder="example@html.com" name="email" required>
+<br> <br>
+    <label for="">Password:</label>
+    <input type="password" placeholder="Enter a Strong Password" name="password">
+<br> <br>
+    <label for="">Age:</label>
+    <input type="number" placeholder="Age" name="age">
+<br> <br>
+    <label for="">D.O.B :</label>
+    <input type="date" name="dob">
+<br> <br>
+    <label for="">Time:</label>
+    <input type="time">
+<br> <br>
+    <label for="">Phone:</label>
+    <input type="tel" name="phone" placeholder="+91 9876543210">
+<br> <br>
 
-      <input type="checkbox" />
-      <label for="">singing</label>
+<label for="">Gender:</label>
 
-      <input type="checkbox" />
-      <label for="">Cooking</label>
-      <br />
-      <hr />
-      <!-- Date -->
-      <label for="">Date of Birth</label>
-      <br />
-      <input type="date" />
+<input type="radio">
+<label for="male">Male</label>
 
-      <br />
-      <hr />
+<input type="radio">
+<label for="female">Female</label>
 
-      <!-- Textarea -->
-      <label for="">Address:</label>
-      <br />
-      <textarea rows="4" cols="30"></textarea>
-      <br />
-      <hr />
-      <!-- File -->
-      <label for="">Upload Marksheet:</label>
-      <br />
-      <input type="file" />
-      <br /><br />
+<br> <br>
+<label for="">Skills:</label>
 
-      <input type="submit" />
-      <input type="" name="" id="" />
-    </form>
-  </body>
+<input type="checkbox">
+<label for="html">HTML</label>
+
+<input type="checkbox">
+<label for="">CSS</label>
+
+<input type="checkbox">
+<label for="">JS</label>
+
+<br> <br>
+<label for="">Course:</label>
+
+<select name="" id="">
+    <option value="" >--Select Course--</option>
+    <option value="">BA</option>
+    <option value="">B.Com</option>
+    <option value="">B.Sc</option>
+    <option value="">BCA</option>
+    <option value="">BBA</option>
+    <option value="">MBA</option>
+    <option value="">B.Tech</option>
+</select>
+<br> <br>
+ <label for="">Color:</label>
+ <input type="color">
+<br> <br>
+<label for="">Fee:</label>
+<input type="range" min="0" max="100">
+
+<br> <br>
+<label for="">Documents:</label>
+<input type="file" required>
+
+<br> <br>
+  <label for="">Search:</label>
+  <input type="search" placeholder="Search Keyword">
+<br> <br>
+    <input type="submit">
+    
+</form>
+    
+</body>
 </html>
