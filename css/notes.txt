@@ -1,0 +1,47 @@
+types of CSS.
+
+there are 3 CSS
+
+inline CSS
+interanl CSS
+External CSS
+
+
+priority vise list of CSS types.
+
+1. inline CSS
+2. External CSS
+3. interanl CSS
+
+
+Color theory:
+
+we have 3 diffrent option to change the color property.
+
+1. Color name (red)
+2. rgb : rgb(255,0,0)
+3. hex : #ff0000
+
+Number System in Computer.
+
+1. Binary : 0, 1.
+2. Octal  : 0,1,2,3,4,5,6,7
+3  Decimal : 0,1,2,3,4,5,6,7,8,9
+4. Hexadecimal : 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+
+A = 10,
+B = 11
+C = 12
+D = 13
+E = 14
+f = 15
+
+
+hex : 00 00 00
+
+1st "00" that is for red
+2nd 2 digits are for green
+3rd 2 digits are for blue
+
+
+
