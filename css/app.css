@@ -1,3 +1,28 @@
-h1 {
-    color: #c8c5ff
+body {
+  padding: 50px;
+  margin: 0;
 }
+
+#box1{
+    height:100px;
+    width: 200px;
+    background-color: #55ffee;
+    margin: 10px;
+    border: 5px dotted rgb(64, 0, 255);
+    
+}
+#box2{
+    height:100px;
+    width: 200px;
+    background-color: #55ffee;
+    margin: 10px;
+  
+}
+#box3{
+    height:100px;
+    width: 200px;
+    background-color: #55ffee;
+    margin: 10px;
+    
+}
+

@@ -19,7 +19,7 @@ Color theory:
 we have 3 diffrent option to change the color property.
 
 1. Color name (red)
-2. rgb : rgb(255,0,0)
+2. rgb : rgb(255,0,0) and rgba
 3. hex : #ff0000
 
 Number System in Computer.
@@ -42,6 +42,13 @@ hex : 00 00 00
 1st "00" that is for red
 2nd 2 digits are for green
 3rd 2 digits are for blue
+
+hex  #ff0000  red
+       #00ff00 green
+         #0000ff blue
+
+
+         combinition: #44aae0
 
 
 
