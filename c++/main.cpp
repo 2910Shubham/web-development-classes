@@ -1,42 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    int a = 5;
+int fact(int n){
+    int fact=1;
 
-    //upper
+    for(int i=1; i<=n; i++){
+        fact= fact*i;
+    }
+    return fact;
+}
 
-     for(int i=1; i<=a; i++){
-        for(int j=1;j<=i;j++){
-            cout << "*";
-        }
-        for(int j=a-i; j>=1; j--){
-            cout << " " << " " ;
-        }
-         for(int j=1;j<=i;j++){
-            cout << "*";
-        }
+int nCr(int n, int r){
     
-        cout << "\n";
-     }
+   int ncr = fact(n)/(fact(r)*fact(n-r));
+
+  return ncr;
+}
 
 
-     //lower 
+int main() {
+   // cout << nCr(8,2);
 
-     for(int i=1; i<=a; i++){
-        for(int j=a-i;j>=1;j--){
-            cout << "*";
-        }
-        for(int j=1; j<=i; j++){
-            cout << " " << " ";
-        }
-          for(int j=a-i;j>=1;j--){
-            cout << "*";
-        }
-    
-        cout << "\n";
-     }
+   cout << (20>>1);
+   cout << (40>>2);
+   cout << (35>>3);
+   cout << (100>>2);
+   
 
 
+
+    return 0;
 
 }
