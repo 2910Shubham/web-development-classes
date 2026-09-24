@@ -1,0 +1,4 @@
+#8BBB92 -- body backgrounds
+#2A835F
+#12544F -- nav backgrounds
+#092328 ---> Text, card backgrounds
