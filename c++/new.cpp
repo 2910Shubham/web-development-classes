@@ -20,20 +20,21 @@ int sumArr(vector<int> arr){
 int main(){
         int n =7;
         int great = INT_MIN;
-        int arr[n]= {3,-4,5,4,7,-8};
+        int arr[n]= {3,-4,5,4,-1,7,-8};
+        int currSum = 0;
        
 
-        for(int st=0; st<n; st++){
-            int sum = 0;
-            for(int end=st; end<n; end++){
-                sum += arr[end];
-                great = max(great, sum);
-               // sum.push_back(sumArr(temp));
-                cout << " ";
-            }
+        for(int i=0; i<n; i++){
+             currSum += arr[i];
+             great = max(currSum, great);
+
+             if(currSum < 0){
+                currSum = 0;
+             }
+            
 
 
-            cout << endl;
+            cout << great << endl;
         }
         
         
@@ -42,3 +43,4 @@ int main(){
 
    };
 
+ 
