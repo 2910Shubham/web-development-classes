@@ -1,46 +1,36 @@
 #include <iostream>
 #include <vector>
-#include <climits>
+#include <algorithm>
 using namespace std;
 
-int sumArr(vector<int> arr){
-    int sum =0;
+int main(){
+  vector<int> nums = {1,3,1,1,4,1,1,5,1,1,6,2,2};
+   int fq = 1, size=nums.size(), n=nums[0];
 
-    for(int i=0; i<arr.size(); i++){
-        sum += arr[i];
-    }
+        for(int i=0; i<size; i++){
+            if(fq==0){
+                n = nums[i];
+            }
+            if(nums[i]==n){
+                fq++;
+            }else{
+                fq--;
+            }
+            if(fq > size/2){
+            cout << n ;
+            return n;
+        }
 
-    return sum;
+            cout << i << ' '<< "fq :" << ' '<< fq << n << '\n';
 
+        }
+      
+        cout << n;
+         return n;
+    
+  
+  
 
+  
 
 }
-
-
-int main(){
-        int n =7;
-        int great = INT_MIN;
-        int arr[n]= {3,-4,5,4,-1,7,-8};
-        int currSum = 0;
-       
-
-        for(int i=0; i<n; i++){
-             currSum += arr[i];
-             great = max(currSum, great);
-
-             if(currSum < 0){
-                currSum = 0;
-             }
-            
-
-
-            cout << great << endl;
-        }
-        
-        
-        cout << "Greatest sum of the subarray of arr is: " << great;
-
-
-   };
-
- 
