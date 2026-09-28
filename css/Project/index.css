@@ -214,6 +214,50 @@ nav {
     font-size: larger;
 }
 
+footer {
+    min-height: 100px;
+    height: auto;
+    width: 98vw;
+    background-color: #092328;
+    padding: 30px;
+    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+    border-radius: 30px;
+}
+
+.foot {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.link-header {
+    color: white;
+    font-size: x-large;
+    margin-bottom: 8px;
+}
+
+.quick-links li ,a, .social-links li ,a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+    margin: 3px;
+}
+
+.cover {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
 
 
 
