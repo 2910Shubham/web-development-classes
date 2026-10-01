@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+     background-color: #c7decb;
+    padding: 10px;
+}
+
+.container{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.title {
+    font-size: 50px;
+
+}
+
+.para-box {
+    height: 60vh;
+    width: 70vw;
+
+}
+
+.para-box p {
+    margin-top: 20px;
+    text-align: justify;
+}
