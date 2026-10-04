@@ -3,30 +3,33 @@
 #include <algorithm>
 using namespace std;
 
-int main(){
-  vector<int> nums = {1,3,1,1,4,1,1,5,1,1,6,2,2};
-   int fq = 1, size=nums.size(), n=nums[0];
+pair<int, int> fn(){
 
-        for(int i=0; i<size; i++){
-            if(fq==0){
-                n = nums[i];
-            }
-            if(nums[i]==n){
-                fq++;
+}
+
+
+int main() {
+  vector<int> nums = {3,2,4};
+  int target = 6;
+//    int fq = 1, size=nums.size(), n=nums[0];
+//   sort(nums.begin(), nums.end());
+        int n = nums.size();
+
+      for(int i=0; i<n; i++){
+          for(int j=0; j<n;j++){
+            int sum = nums[i]+ nums[j];
+            cout << sum << "\n";
+            if(sum ==target){
+                cout << i << ' ' << j;
+                // return {i,j};
             }else{
-                fq--;
+                return {};
             }
-            if(fq > size/2){
-            cout << n ;
-            return n;
+          }
         }
-
-            cout << i << ' '<< "fq :" << ' '<< fq << n << '\n';
-
-        }
-      
-        cout << n;
-         return n;
+        
+        
+    return {};
     
   
   
