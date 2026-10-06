@@ -5,32 +5,33 @@ using namespace std;
 
 int main(){
     int arr[] = {3,7,10,11,14,19};
-    int arr1[] = {5,9,12,13,18,22,25,28};
-    int  n= sizeof(arr)/sizeof(int), m= sizeof(arr1)/ sizeof(int), one[n+m] = {};
-    int i=0, j=0, k=0;
+    int  n= sizeof(arr)/sizeof(int);
 
-    while(i<n && j< m){
-        if(arr[i]<arr1[j]){
-          one[k] = arr[i];
-          i++;
-          k++;
-        }else{
-            one[k]= arr1[j];
-            j++;
-            k++;
+    int w = 4;
+    int stop = w;
+    int curr = 0;
+
+
+
+    for(int i=0; i<=w; i++){
+        curr = curr + arr[i];
+    }
+  cout << "intial: "<< curr << '\n' ;
+    int max = curr;
+
+    for(int i=1; i<n-w; i++){
+        curr = curr + arr[i+w-1] - arr[i-1];
+        cout << "on iteration "<< i << " " << curr << '\n';
+
+        if(curr>max){
+            max = curr;
         }
     }
-        while(j<m){
-            one[k++] = arr1[j++];
-         
-        }
 
-        while(i<n){
-            one[k++] = arr[i++];
-            
-        }
-    for(int f=0; f<m+n; f++){
-        cout << one[f] << " "; 
-    }
+    cout << max;
 
+
+
+
+   
 }
