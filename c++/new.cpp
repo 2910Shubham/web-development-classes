@@ -1,39 +1,27 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
 using namespace std;
 
-pair<int, int> fn(){
 
-}
-
-
-int main() {
-  vector<int> nums = {3,2,4};
-  int target = 6;
-//    int fq = 1, size=nums.size(), n=nums[0];
-//   sort(nums.begin(), nums.end());
-        int n = nums.size();
-
-      for(int i=0; i<n; i++){
-          for(int j=0; j<n;j++){
-            int sum = nums[i]+ nums[j];
-            cout << sum << "\n";
-            if(sum ==target){
-                cout << i << ' ' << j;
-                // return {i,j};
-            }else{
-                return {};
+    void peli(string one){
+        int len = one.length();
+        bool isbool = 1;
+        for(int i=0, j=len-1;i<j; i++, j--){
+            if(one[i]==one[j]) continue;
+            if(one[i]!=one[j]){
+                isbool = 0;
+                break;
             }
-          }
         }
-        
-        
-    return {};
-    
-  
-  
 
-  
+        if(isbool){
+            cout << "Pelindrom";
+        }else{
+            cout << "Not Pelinfrom";
+        }
 
+    }
+int main(){
+    peli("appa");
+    return 0;
 }
