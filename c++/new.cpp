@@ -1,27 +1,35 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 
-    void peli(string one){
-        int len = one.length();
-        bool isbool = 1;
-        for(int i=0, j=len-1;i<j; i++, j--){
-            if(one[i]==one[j]) continue;
-            if(one[i]!=one[j]){
-                isbool = 0;
-                break;
+  int maxProfit(vector<int>& prices) {
+        int bb = prices[0];
+        int bs = 0;
+
+        for(int i=1; i<prices.size(); i++){
+           
+
+            if(prices[i]-bb < 0){
+                bb= prices[i];
             }
+             cout << "when bb is " << bb << "bs is "<<prices[i] - bb <<" before if" << '\n';                  
+         
+            if(prices[i] - bb>bs){
+                bs = prices[i] - bb;
+            }
+                cout << "when bb is " << bb << "bs is "<< bs <<" after if" << '\n';
         }
 
-        if(isbool){
-            cout << "Pelindrom";
-        }else{
-            cout << "Not Pelinfrom";
-        }
-
+        return bs;
+        
     }
+
 int main(){
-    peli("appa");
+    vector<int> test = {7,1,5,3,6,4};
+
+   cout << maxProfit(test);
+    
     return 0;
 }
